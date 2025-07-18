@@ -23,7 +23,7 @@ export default function About() {
     {
       name: "Abhinav Rathor",
       role: "Cofounder & CTO",
-      image: "/abhinav.jpeg",
+      image: "/IMG_8070 (1).jpg",
       bio: "Technology visionary with expertise in AI, cloud architecture, and scalable systems",
       linkedin: "https://www.linkedin.com/in/abhinav-rathor/"
     },

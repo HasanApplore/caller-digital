@@ -13,7 +13,7 @@ const navLinks = [
 
 const solutionsLinks = [
   { href: "/realestate", label: "Real Estate", icon: "🏠" },
-  { href: "/hospital", label: "Hospital", icon: "🏥" },
+  { href: "/hospital", label: "Healthcare", icon: "🏥" },
   { href: "/hospitality", label: "Hospitality", icon: "🏨" },
   { href: "/automobile", label: "Automobile", icon: "🚗" },
   { href: "/bfsi", label: "BFSI", icon: "🏦" },

@@ -12,7 +12,7 @@ const navLinks = [
 
 const solutionsLinks = [
   { href: "/realestate", label: "Real Estate", icon: "🏠" },
-  { href: "/hospital", label: "Hospital", icon: "🏥" },
+  { href: "/hospital", label: "Healthcare", icon: "🏥" },
   { href: "/hospitality", label: "Hospitality", icon: "🏨" },
   { href: "/voice-ai", label: "Try It", icon: "🤖" },
 ];
