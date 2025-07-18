@@ -1,0 +1,139 @@
+'use client';
+
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import Head from 'next/head';
+
+const faqs = [
+  {
+    question: 'How does AI improve hospital operations?',
+    answer: 'AI streamlines patient care, automates administrative tasks, and provides instant responses to patient inquiries, improving efficiency and patient satisfaction.'
+  },
+  {
+    question: 'Is Caller.Digital secure for healthcare data?',
+    answer: 'Yes, Caller.Digital’s AI solutions are built with security in mind, supporting HIPAA compliance and data privacy for healthcare professionals and patients.'
+  },
+  {
+    question: 'Can AI help with patient management?',
+    answer: 'Absolutely. AI can automate appointment scheduling, patient communications, and administrative tasks, making healthcare delivery more efficient and responsive.'
+  }
+];
+
+export default function HospitalPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (idx: number) => {
+    setOpenIndex(openIndex === idx ? null : idx);
+  };
+
+  return (
+    <>
+      <Head>
+        <title>AI for Hospital Industry | Caller.Digital</title>
+        <meta name="description" content="Transform hospital operations with AI voice bots and automation. Improve patient care, administrative efficiency, and healthcare delivery with Caller.Digital." />
+      </Head>
+      <main className="min-h-screen bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100 relative overflow-hidden">
+        <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-16">
+          <div className="max-w-5xl w-full space-y-16">
+            {/* SEO Intro */}
+            <div className="flex flex-col items-center text-center space-y-6">
+              <motion.h1 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500"
+              >
+                Hospital Industry AI Solutions
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-xl text-gray-700 max-w-2xl mx-auto"
+              >
+                The hospital industry is embracing AI to enhance patient care, streamline administrative processes, and improve operational efficiency. Caller.Digital's AI voice bots and automation tools help healthcare professionals deliver better patient experiences while reducing administrative burden.
+              </motion.p>
+            </div>
+
+            {/* Audio Recording */}
+            <div className="flex justify-center mt-2 mb-10">
+              <audio controls className="w-full max-w-md rounded-lg shadow-lg">
+                <source src="/recordings/HOSPITAL.m4a" type="audio/mp4" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+
+            {/* Expanded Features Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-white rounded-2xl p-10 border border-gray-100 shadow-md flex flex-col justify-center min-h-[320px]"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Key AI Features for Hospitals</h3>
+                <ul className="space-y-4 text-gray-700 text-base">
+                  <li>24/7 automated patient support and inquiries</li>
+                  <li>Instant appointment scheduling and reminders</li>
+                  <li>Automated patient registration and check-in</li>
+                  <li>Medical information and FAQ responses</li>
+                  <li>Emergency contact and triage assistance</li>
+                  <li>Seamless integration with hospital management systems</li>
+                  <li>Automated follow-ups and patient communications</li>
+                </ul>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="bg-white rounded-2xl p-10 border border-gray-100 shadow-md flex flex-col justify-center min-h-[320px]"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Benefits for Hospitals</h3>
+                <ul className="space-y-4 text-gray-700 text-base">
+                  <li>Improve patient satisfaction and care quality</li>
+                  <li>Reduce administrative workload and costs</li>
+                  <li>Enhance operational efficiency and productivity</li>
+                  <li>Streamline patient communication and support</li>
+                  <li>Boost staff productivity and focus on patient care</li>
+                </ul>
+              </motion.div>
+            </div>
+
+            {/* Collapsible FAQ Section */}
+            <div className="mt-20 mb-8">
+              <h2 className="text-2xl font-bold mb-10 text-gray-900">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {faqs.map((faq, idx) => (
+                  <div key={idx} className="border border-gray-200 rounded-xl bg-white shadow-sm transition-all">
+                    <button
+                      className="w-full flex items-center justify-between px-8 py-6 text-left focus:outline-none hover:bg-blue-50 transition-colors rounded-xl group"
+                      onClick={() => toggleFAQ(idx)}
+                      aria-expanded={openIndex === idx}
+                      aria-controls={`faq-panel-${idx}`}
+                    >
+                      <span className="font-semibold text-lg text-indigo-700 select-none">{faq.question}</span>
+                      <svg
+                        className={`w-7 h-7 ml-4 transform transition-transform duration-200 text-indigo-400 group-hover:text-indigo-600 ${openIndex === idx ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {openIndex === idx && (
+                      <div id={`faq-panel-${idx}`} className="px-8 pb-6 text-gray-700 animate-fade-in">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+} 

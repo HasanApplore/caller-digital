@@ -1,0 +1,224 @@
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Vapi from '@vapi-ai/web';
+import Head from 'next/head';
+
+export default function CirclePayPage() {
+  const [isCallActive, setIsCallActive] = useState(false);
+  const [status, setStatus] = useState('Ready to start');
+  const [timeLeft, setTimeLeft] = useState<number | null>(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const vapiRef = useRef<Vapi | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    // Initialize Vapi with your public key
+    vapiRef.current = new Vapi(process.env.NEXT_PUBLIC_VAPI_KEY || "");
+
+    // Set up event listeners
+    vapiRef.current.on('call-start', () => {
+      setStatus('Call connected');
+      setIsCallActive(true);
+      // Start 5-minute timer
+      setTimeLeft(300); // 5 minutes in seconds
+      timerRef.current = setInterval(() => {
+        setTimeLeft(prev => {
+          if (prev === null || prev <= 1) {
+            if (timerRef.current) clearInterval(timerRef.current);
+            stopCall();
+            return null;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    });
+
+    vapiRef.current.on('call-end', () => {
+      setStatus('Call ended');
+      setIsCallActive(false);
+      setIsSpeaking(false);
+      setTimeLeft(null);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    });
+
+    vapiRef.current.on('speech-start', () => {
+      setIsSpeaking(true);
+    });
+
+    vapiRef.current.on('speech-end', () => {
+      setIsSpeaking(false);
+    });
+
+    vapiRef.current.on('error', (error) => {
+      console.error('Vapi error:', error);
+      setStatus('Error occurred');
+      setIsSpeaking(false);
+      setTimeLeft(null);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    });
+
+    return () => {
+      if (vapiRef.current) {
+        vapiRef.current.stop();
+      }
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, []);
+
+  const startCall = async () => {
+    try {
+      setStatus('Starting call...');
+      await vapiRef.current?.start("695b5f54-e21c-4bc1-a0b4-da029aac8a5b");
+    } catch (error) {
+      console.error('Error starting call:', error);
+      setStatus('Failed to start call');
+    }
+  };
+
+  const stopCall = () => {
+    try {
+      setStatus('Ending call...');
+      vapiRef.current?.stop();
+    } catch (error) {
+      console.error('Error ending call:', error);
+      setStatus('Error ending call');
+    }
+  };
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  return (
+    <>
+      <Head>
+        <title>Circle Pe AI Assistant Demo | Caller.Digital</title>
+        <meta name="description" content="Experience Circle Pe AI assistant demo with voice interaction capabilities for digital payments and financial services." />
+      </Head>
+      <main className="min-h-screen bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 relative overflow-hidden">
+        <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-16">
+          <div className="max-w-5xl w-full space-y-16">
+            {/* Header Section */}
+            <div className="flex flex-col items-center text-center space-y-6">
+              <motion.h1 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >
+                Circle Pe AI Assistant Demo
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-xl text-gray-700 max-w-2xl mx-auto"
+              >
+                Experience our advanced AI assistant with natural voice interaction capabilities. Start a conversation and see how Circle Pe can help you with digital payments and financial services.
+              </motion.p>
+            </div>
+
+            {/* Call Controls */}
+            <div className="flex flex-col items-center space-y-8">
+              {/* Status Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg max-w-md w-full"
+              >
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-semibold text-gray-900">Status: {status}</div>
+                  {timeLeft !== null && (
+                    <div className="text-lg text-gray-600">Time remaining: {formatTime(timeLeft)}</div>
+                  )}
+                  {isSpeaking && (
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                      <span className="text-blue-600 font-medium">Speaking...</span>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+
+              {/* Control Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="flex space-x-4"
+              >
+                {!isCallActive ? (
+                  <button
+                    onClick={startCall}
+                    disabled={status === 'Starting call...'}
+                    className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:from-blue-500 hover:to-purple-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === 'Starting call...' ? 'Starting...' : 'Start Call'}
+                  </button>
+                ) : (
+                  <button
+                    onClick={stopCall}
+                    className="bg-red-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-red-600 transition-all duration-300"
+                  >
+                    End Call
+                  </button>
+                )}
+              </motion.div>
+            </div>
+
+            {/* Features Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="bg-white rounded-2xl p-10 border border-gray-100 shadow-md flex flex-col justify-center min-h-[320px]"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">AI Assistant Features</h3>
+                <ul className="space-y-4 text-gray-700 text-base">
+                  <li>Natural voice conversation</li>
+                  <li>Real-time speech recognition</li>
+                  <li>Intelligent response generation</li>
+                  <li>Context-aware interactions</li>
+                  <li>Multi-language support</li>
+                  <li>Seamless conversation flow</li>
+                  <li>Advanced AI capabilities</li>
+                </ul>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="bg-white rounded-2xl p-10 border border-gray-100 shadow-md flex flex-col justify-center min-h-[320px]"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">How It Works</h3>
+                <ul className="space-y-4 text-gray-700 text-base">
+                  <li>Click "Start Call" to begin</li>
+                  <li>Speak naturally with the AI</li>
+                  <li>Get instant voice responses</li>
+                  <li>Conversation continues for 5 minutes</li>
+                  <li>Click "End Call" to finish</li>
+                </ul>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+} 
