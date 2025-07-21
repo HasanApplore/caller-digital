@@ -21,7 +21,7 @@ const aboutLinks = [
 
 const solutionsByIndustry = [
   { href: "/realestate", label: "Real Estate" },
-  { href: "/hospital", label: "Hospital" },
+  { href: "/hospital", label: "Healthcare" },
   { href: "/hospitality", label: "Hospitality" },
   { href: "/automobile", label: "Automobile" },
   { href: "/bfsi", label: "BFSI" },
@@ -39,6 +39,8 @@ const solutionsByUseCase = [
 const integrationsLinks = [
   { href: "/integrations/crm", label: "CRM Integrations" },
   { href: "/integrations/telephony", label: "Telephony Integrations" },
+  { href: "/integrations/technologyStack", label: "Technology Stack" },
+
 ];
 
 const resourcesLinks = [
@@ -99,7 +101,7 @@ export default function Navigation() {
                   className="text-gray-700 hover:text-blue-500 transition-colors flex items-center space-x-1 font-bold focus:outline-none"
                   onClick={() => setIsAboutOpen(!isAboutOpen)}
                 >
-                  <span>About Caller Digital</span>
+                  <span>About Us</span>
                   <FaChevronDown className="w-3 h-3" />
                 </button>
                 {isAboutOpen && (

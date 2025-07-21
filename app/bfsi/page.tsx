@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import Footer from '@/app/components/Footer';
 
 const faqs = [
   {
@@ -37,13 +38,19 @@ export default function BFSIPage() {
           <div className="max-w-5xl w-full space-y-16">
             {/* SEO Intro */}
             <div className="flex flex-col items-center text-center space-y-6">
-              <motion.h1 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500"
+              <motion.div
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
               >
-                BFSI Industry AI Solutions
-              </motion.h1>
+                <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 leading-tight">
+                  AI Solutions for BFSI
+                  <br />
+                  <span className="bg-gradient-to-r from-[#3fd0b6] via-[#4f8efc] to-[#8f5cf6] bg-clip-text text-transparent block mt-2 font-extrabold" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', lineHeight: 1.1 }}>
+                    Modern Customer Service
+                  </span>
+                </h1>
+              </motion.div>
               <motion.p 
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -63,38 +70,38 @@ export default function BFSIPage() {
             </div>
 
             {/* Expanded Features Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="bg-white rounded-2xl p-10 border border-gray-100 shadow-md flex flex-col justify-center min-h-[320px]"
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 flex flex-col justify-center min-h-[320px] hover:shadow-2xl transition-all duration-300 group"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Key AI Features for BFSI</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-violet-600 transition-colors duration-300">Key AI Features for BFSI</h3>
                 <ul className="space-y-4 text-gray-700 text-base">
-                  <li>24/7 automated customer support for banking and insurance</li>
-                  <li>Instant account balance, transaction, and policy info</li>
-                  <li>Automated loan, credit, and claim applications</li>
-                  <li>Fraud detection and risk monitoring</li>
-                  <li>Regulatory compliance and reporting automation</li>
-                  <li>Personalized financial advice and product recommendations</li>
-                  <li>Seamless integration with core banking and insurance systems</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>24/7 automated customer support for banking and insurance</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Instant account balance, transaction, and policy info</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Automated loan, credit, and claim applications</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Fraud detection and risk monitoring</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Regulatory compliance and reporting automation</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Personalized financial advice and product recommendations</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Seamless integration with core banking and insurance systems</li>
                 </ul>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="bg-white rounded-2xl p-10 border border-gray-100 shadow-md flex flex-col justify-center min-h-[320px]"
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 flex flex-col justify-center min-h-[320px] hover:shadow-2xl transition-all duration-300 group"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Benefits for BFSI Organizations</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-violet-600 transition-colors duration-300">Benefits for BFSI Organizations</h3>
                 <ul className="space-y-4 text-gray-700 text-base">
-                  <li>Enhance customer trust and satisfaction</li>
-                  <li>Reduce operational costs and manual workload</li>
-                  <li>Accelerate onboarding and claims processing</li>
-                  <li>Improve compliance and reduce regulatory risk</li>
-                  <li>Boost cross-sell and upsell opportunities</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Enhance customer trust and satisfaction</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Reduce operational costs and manual workload</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Accelerate onboarding and claims processing</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Improve compliance and reduce regulatory risk</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Boost cross-sell and upsell opportunities</li>
                 </ul>
               </motion.div>
             </div>
@@ -134,6 +141,7 @@ export default function BFSIPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 } 

@@ -103,20 +103,20 @@ export default function Product() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
       {/* Hero Section */}
-      <section className="relative py-12 overflow-hidden">
+      <section className="relative py-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-4 mt-8"
+            className="text-center mb-2 mt-8"
           >
             <motion.div
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 leading-tight">
                 AI-Powered Voice Solutions for
                 <br />
                 <motion.span 
@@ -130,7 +130,7 @@ export default function Product() {
               </h1>
             </motion.div>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -154,13 +154,13 @@ export default function Product() {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-16">
+      <section className="pt-4 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             {...fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Product Highlights</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900">Product Highlights</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Cutting-edge features that set our solution apart
             </p>

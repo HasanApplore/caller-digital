@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import Footer from '@/app/components/Footer';
 
 const faqs = [
   {
@@ -37,13 +38,19 @@ export default function ManufacturingPage() {
           <div className="max-w-5xl w-full space-y-16">
             {/* SEO Intro */}
             <div className="flex flex-col items-center text-center space-y-6">
-              <motion.h1 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500"
+              <motion.div
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
               >
-                Manufacturing Industry AI Solutions
-              </motion.h1>
+                <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 leading-tight">
+                  AI Solutions for Manufacturing
+                  <br />
+                  <span className="bg-gradient-to-r from-[#3fd0b6] via-[#4f8efc] to-[#8f5cf6] bg-clip-text text-transparent block mt-2 font-extrabold" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', lineHeight: 1.1 }}>
+                    Modern Customer Service
+                  </span>
+                </h1>
+              </motion.div>
               <motion.p 
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -63,38 +70,38 @@ export default function ManufacturingPage() {
             </div>
 
             {/* Expanded Features Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="bg-white rounded-2xl p-10 border border-gray-100 shadow-md flex flex-col justify-center min-h-[320px]"
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 flex flex-col justify-center min-h-[320px] hover:shadow-2xl transition-all duration-300 group"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Key AI Features for Manufacturing</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-violet-600 transition-colors duration-300">Key AI Features for Manufacturing</h3>
                 <ul className="space-y-4 text-gray-700 text-base">
-                  <li>24/7 automated support for production and maintenance teams</li>
-                  <li>Automated production scheduling and monitoring</li>
-                  <li>Quality control and testing automation</li>
-                  <li>Inventory and supply chain management</li>
-                  <li>Equipment health monitoring and predictive maintenance</li>
-                  <li>Safety compliance and incident reporting</li>
-                  <li>Seamless integration with ERP and MES systems</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>24/7 automated support for production and maintenance teams</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Automated production scheduling and monitoring</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Quality control and testing automation</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Inventory and supply chain management</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Equipment health monitoring and predictive maintenance</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Safety compliance and incident reporting</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Seamless integration with ERP and MES systems</li>
                 </ul>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="bg-white rounded-2xl p-10 border border-gray-100 shadow-md flex flex-col justify-center min-h-[320px]"
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 flex flex-col justify-center min-h-[320px] hover:shadow-2xl transition-all duration-300 group"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Benefits for Manufacturers</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-violet-600 transition-colors duration-300">Benefits for Manufacturers</h3>
                 <ul className="space-y-4 text-gray-700 text-base">
-                  <li>Reduce downtime and improve efficiency</li>
-                  <li>Enhance product quality and consistency</li>
-                  <li>Lower operational costs and manual workload</li>
-                  <li>Improve safety and compliance</li>
-                  <li>Boost customer and staff satisfaction</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Reduce downtime and improve efficiency</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Enhance product quality and consistency</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Lower operational costs and manual workload</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Improve safety and compliance</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mr-3"></span>Boost customer and staff satisfaction</li>
                 </ul>
               </motion.div>
             </div>
@@ -134,6 +141,7 @@ export default function ManufacturingPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 } 
