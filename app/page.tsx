@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from 'react-type-animation';
-import { FaQuoteLeft, FaStar, FaRobot, FaPhoneAlt, FaLanguage, FaChartLine, FaDatabase, FaServer, FaShieldAlt, FaNetworkWired, FaCogs, FaShoppingCart, FaHospital, FaIndustry, FaBrain, FaHome, FaChevronDown } from 'react-icons/fa';
-import { BsLightningChargeFill, BsGraphUp, BsShieldCheck } from 'react-icons/bs';
+import { RiDoubleQuotesL, RiStarFill, RiArrowDownSLine } from 'react-icons/ri';
+import { RiRobotFill, RiCustomerService2Fill, RiTranslate2, RiBarChartFill, RiDatabase2Fill, RiServerFill, RiBriefcase4Fill, RiBankFill, RiGraduationCapFill, RiHomeSmileFill, RiHospitalFill, RiShoppingBag3Fill, RiFlashlightFill, RiLineChartFill, RiShieldKeyholeFill, RiApps2Fill } from 'react-icons/ri';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,6 +13,7 @@ import { useState, useEffect, useRef } from 'react';
 import Footer from './components/Footer';
 
 export default function Home() {
+
   const [isHovered, setIsHovered] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const elementsRef = useRef<HTMLElement[]>([]);
@@ -54,18 +55,22 @@ export default function Home() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    arrows: false,
+    swipeToSlide: true,
+    touchThreshold: 10,
     responsive: [
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          speed: 500
         }
       }
     ]
@@ -73,6 +78,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
+
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
         {/* Subtle logo background accent */}
@@ -177,43 +183,37 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <FaRobot className="w-12 h-12 text-white" />,
-                bg: "from-teal-400 via-blue-500 to-purple-500",
-                title: "AI-Powered Voice Bots",
-                description: "Advanced natural language processing for human-like conversations and intelligent responses."
-              },
-              {
-                icon: <FaPhoneAlt className="w-12 h-12 text-white" />,
-                bg: "from-purple-400 via-blue-400 to-teal-400",
-                title: "24/7 Availability",
-                description: "Round-the-clock customer support without the overhead of maintaining large support teams."
-              },
-              {
-                icon: <FaLanguage className="w-12 h-12 text-white" />,
-                bg: "from-blue-400 via-teal-400 to-purple-400",
-                title: "Multilingual Support",
-                description: "Serve customers in their preferred language with automatic translation capabilities."
-              },
-              {
-                icon: <FaChartLine className="w-12 h-12 text-white" />,
-                bg: "from-purple-500 via-blue-500 to-teal-400",
-                title: "Performance Analytics",
-                description: "Comprehensive insights into call quality, customer satisfaction, and operational efficiency."
-              },
-              {
-                icon: <FaDatabase className="w-12 h-12 text-white" />,
-                bg: "from-teal-400 via-purple-400 to-blue-400",
-                title: "Seamless Integration",
-                description: "Easy integration with your existing CRM, helpdesk, and business systems."
-              },
-              {
-                icon: <FaServer className="w-12 h-12 text-white" />,
-                bg: "from-blue-400 via-purple-400 to-teal-400",
-                title: "Enterprise Security",
-                description: "Bank-level security with encryption, compliance, and data protection measures."
-              }
+                          {[
+                {
+                  icon: <RiRobotFill className="w-12 h-12 text-violet-500" />,
+                  title: "AI-Powered Voice Bots",
+                  description: "Advanced natural language processing for human-like conversations and intelligent responses."
+                },
+                {
+                  icon: <RiCustomerService2Fill className="w-12 h-12 text-violet-500" />,
+                  title: "24/7 Availability",
+                  description: "Round-the-clock customer support without the overhead of maintaining large support teams."
+                },
+                {
+                  icon: <RiTranslate2 className="w-12 h-12 text-violet-500" />,
+                  title: "Multilingual Support",
+                  description: "Serve customers in their preferred language with automatic translation capabilities."
+                },
+                {
+                  icon: <RiBarChartFill className="w-12 h-12 text-violet-500" />,
+                  title: "Performance Analytics",
+                  description: "Comprehensive insights into call quality, customer satisfaction, and operational efficiency."
+                },
+                {
+                  icon: <RiDatabase2Fill className="w-12 h-12 text-violet-500" />,
+                  title: "Seamless Integration",
+                  description: "Easy integration with your existing CRM, helpdesk, and business systems."
+                },
+                {
+                  icon: <RiServerFill className="w-12 h-12 text-violet-500" />,
+                  title: "Enterprise Security",
+                  description: "Bank-level security with encryption, compliance, and data protection measures."
+                }
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -222,7 +222,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className={`mb-6 w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br ${feature.bg} shadow-lg`}>
+                <div className="mb-6">
                 {feature.icon}
               </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">{feature.title}</h3>
@@ -249,27 +249,27 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <BsLightningChargeFill className="w-8 h-8 text-blue-500" />,
-                title: "Fast Response",
-                description: "Instant customer support with sub-second response times"
-              },
-              {
-                icon: <BsGraphUp className="w-8 h-8 text-green-500" />,
-                title: "Scalable",
-                description: "Handle unlimited concurrent calls without performance degradation"
-              },
-              {
-                icon: <BsShieldCheck className="w-8 h-8 text-purple-500" />,
-                title: "Secure",
-                description: "Enterprise-grade security with end-to-end encryption"
-              },
-              {
-                icon: <FaNetworkWired className="w-8 h-8 text-teal-500" />,
-                title: "Integrations",
-                description: "Seamless integration with your existing business tools"
-              }
+                          {[
+                {
+                  icon: <RiFlashlightFill className="w-8 h-8 text-violet-500" />,
+                  title: "Fast Response",
+                  description: "Instant customer support with sub-second response times"
+                },
+                {
+                  icon: <RiLineChartFill className="w-8 h-8 text-violet-500" />,
+                  title: "Scalable",
+                  description: "Handle unlimited concurrent calls without performance degradation"
+                },
+                {
+                  icon: <RiShieldKeyholeFill className="w-8 h-8 text-violet-500" />,
+                  title: "Secure",
+                  description: "Enterprise-grade security with end-to-end encryption"
+                },
+                {
+                  icon: <RiApps2Fill className="w-8 h-8 text-violet-500" />,
+                  title: "Integrations",
+                  description: "Seamless integration with your existing business tools"
+                }
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -305,73 +305,67 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <FaIndustry className="w-12 h-12 text-white" />,
-                bg: "from-teal-400 via-blue-500 to-purple-500",
-                title: "Manufacturing & Industrial",
-                description: "Streamline production support, automate maintenance requests, and handle supplier inquiries with AI-powered voice solutions.",
-                useCases: [
-                  "24/7 Equipment Maintenance Support",
-                  "Automated Quality Control Reports",
-                  "Supply Chain Query Resolution"
-                ]
-              },
-              {
-                icon: <FaChartLine className="w-12 h-12 text-white" />,
-                bg: "from-purple-400 via-blue-400 to-teal-400",
-                title: "Fintech & Banking",
-                description: "Enhance customer support with AI agents handling account queries, fraud detection, and transaction processing.",
-                useCases: [
-                  "Automated Transaction Verification",
-                  "24/7 Banking Support",
-                  "Fraud Alert Management"
-                ]
-              },
-              {
-                icon: <FaBrain className="w-12 h-12 text-white" />,
-                bg: "from-blue-400 via-teal-400 to-purple-400",
-                title: "EdTech & Learning",
-                description: "Transform educational support with AI-powered tutoring, enrollment assistance, and student services.",
-                useCases: [
-                  "24/7 Student Support Services",
-                  "Automated Enrollment Assistance",
-                  "Course Information & Guidance"
-                ]
-              },
-              {
-                icon: <FaHome className="w-12 h-12 text-white" />,
-                bg: "from-purple-500 via-blue-500 to-teal-400",
-                title: "Real Estate",
-                description: "Revolutionize property management with AI-powered leasing assistance, maintenance coordination, and tenant support.",
-                useCases: [
-                  "Automated Property Inquiries",
-                  "24/7 Tenant Support",
-                  "Maintenance Request Processing"
-                ]
-              },
-              {
-                icon: <FaHospital className="w-12 h-12 text-white" />,
-                bg: "from-teal-400 via-purple-400 to-blue-400",
-                title: "Healthcare",
-                description: "Improve patient care with HIPAA-compliant AI solutions for appointment scheduling, follow-ups, and care coordination.",
-                useCases: [
-                  "Automated Appointment Scheduling",
-                  "Patient Follow-up Calls",
-                  "Medical Record Assistance"
-                ]
-              },
-              {
-                icon: <FaShoppingCart className="w-12 h-12 text-white" />,
-                bg: "from-blue-400 via-purple-400 to-teal-400",
-                title: "E-commerce",
-                description: "Enhance customer experience with AI-powered order tracking, returns processing, and product support.",
-                useCases: [
-                  "24/7 Order Status Updates",
-                  "Automated Returns Processing",
-                  "Product Information Support"
-                ]
-              }
+                          {[
+                {
+                  icon: <RiBriefcase4Fill className="w-12 h-12 text-violet-500" />,
+                  title: "Manufacturing & Industrial",
+                  description: "Streamline production support, automate maintenance requests, and handle supplier inquiries with AI-powered voice solutions.",
+                  useCases: [
+                    "24/7 Equipment Maintenance Support",
+                    "Automated Quality Control Reports",
+                    "Supply Chain Query Resolution"
+                  ]
+                },
+                {
+                  icon: <RiBankFill className="w-12 h-12 text-violet-500" />,
+                  title: "Fintech & Banking",
+                  description: "Enhance customer support with AI agents handling account queries, fraud detection, and transaction processing.",
+                  useCases: [
+                    "Automated Transaction Verification",
+                    "24/7 Banking Support",
+                    "Fraud Alert Management"
+                  ]
+                },
+                {
+                  icon: <RiGraduationCapFill className="w-12 h-12 text-violet-500" />,
+                  title: "EdTech & Learning",
+                  description: "Transform educational support with AI-powered tutoring, enrollment assistance, and student services.",
+                  useCases: [
+                    "24/7 Student Support Services",
+                    "Automated Enrollment Assistance",
+                    "Course Information & Guidance"
+                  ]
+                },
+                {
+                  icon: <RiHomeSmileFill className="w-12 h-12 text-violet-500" />,
+                  title: "Real Estate",
+                  description: "Revolutionize property management with AI-powered leasing assistance, maintenance coordination, and tenant support.",
+                  useCases: [
+                    "Automated Property Inquiries",
+                    "24/7 Tenant Support",
+                    "Maintenance Request Processing"
+                  ]
+                },
+                {
+                  icon: <RiHospitalFill className="w-12 h-12 text-violet-500" />,
+                  title: "Healthcare",
+                  description: "Improve patient care with HIPAA-compliant AI solutions for appointment scheduling, follow-ups, and care coordination.",
+                  useCases: [
+                    "Automated Appointment Scheduling",
+                    "Patient Follow-up Calls",
+                    "Medical Record Assistance"
+                  ]
+                },
+                {
+                  icon: <RiShoppingBag3Fill className="w-12 h-12 text-violet-500" />,
+                  title: "E-commerce",
+                  description: "Enhance customer experience with AI-powered order tracking, returns processing, and product support.",
+                  useCases: [
+                    "24/7 Order Status Updates",
+                    "Automated Returns Processing",
+                    "Product Information Support"
+                  ]
+                }
             ].map((industry, index) => (
               <motion.div
                 key={index}
@@ -380,7 +374,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group relative bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className={`mb-6 w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br ${industry.bg} shadow-lg`}>
+                <div className="mb-6">
                   {industry.icon}
                 </div>
                 <h3 className="text-2xl font-semibold mb-4 text-gray-900">{industry.title}</h3>
@@ -388,7 +382,7 @@ export default function Home() {
                   <div className="space-y-3">
                     {industry.useCases.map((useCase, i) => (
                     <div key={i} className="flex items-center text-gray-600">
-                      <BsLightningChargeFill className="w-4 h-4 text-blue-400 mr-2 flex-shrink-0" />
+                      <RiFlashlightFill className="w-4 h-4 text-blue-400 mr-2 flex-shrink-0" />
                         <span>{useCase}</span>
                       </div>
                     ))}
@@ -400,7 +394,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
+      <section className="py-20 pb-28 bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -422,35 +416,35 @@ export default function Home() {
             >
               {[
                 {
-                  quote: "Caller.Digital's AI voice solutions transformed our customer support operations. Response times improved by 60% and customer satisfaction scores increased significantly.",
+                  quote: "Caller.Digital's AI voice solutions completely transformed our customer support operations. Response times improved by 60% and customer satisfaction scores increased significantly across all departments.",
                   author: "John Smith",
                   position: "Customer Experience Director",
                   company: "Tech Solutions Inc",
                   rating: 5
                 },
                 {
-                  quote: "The implementation of Caller.Digital's AI agents was seamless. We've seen a 45% reduction in support costs while maintaining excellent service quality.",
+                  quote: "The implementation of Caller.Digital's AI agents was seamless and efficient. We've seen a 45% reduction in support costs while maintaining excellent service quality throughout our organization.",
                   author: "Sarah Johnson",
                   position: "Operations Manager",
                   company: "Growth Startup",
                   rating: 5
                 },
                 {
-                  quote: "As a healthcare provider, we needed a solution that was both efficient and compliant. Caller.Digital delivered beyond our expectations.",
+                  quote: "As a healthcare provider, we needed a solution that was both efficient and compliant with regulations. Caller.Digital delivered beyond our expectations and improved patient communication.",
                   author: "Dr. Michael Chen",
                   position: "Medical Director",
                   company: "Healthcare Innovations",
                   rating: 5
                 },
                 {
-                  quote: "The multilingual support capabilities have been a game-changer for our global operations. Our international customers are thrilled with the service.",
+                  quote: "The multilingual support capabilities have been a complete game-changer for our global operations. Our international customers are thrilled with the personalized service experience.",
                   author: "Emma Davis",
                   position: "Global Support Lead",
                   company: "International Corp",
                   rating: 5
                 },
                 {
-                  quote: "Caller.Digital's AI voice technology has revolutionized our manufacturing support. Technical issues are resolved 40% faster now.",
+                  quote: "Caller.Digital's AI voice technology has revolutionized our manufacturing support operations. Technical issues are now resolved 40% faster with improved accuracy and efficiency.",
                   author: "Robert Wilson",
                   position: "Technical Support Head",
                   company: "Industrial Solutions",
@@ -462,25 +456,25 @@ export default function Home() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="p-8 bg-gray-50 rounded-2xl shadow-md border border-gray-100 relative flex flex-col items-start"
+                    className="p-6 bg-gray-50 rounded-2xl shadow-md border border-gray-100 relative flex flex-col items-start h-80"
                   >
-                    <FaQuoteLeft className="absolute top-6 left-6 text-blue-200 w-8 h-8" />
-                    <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-teal-400 via-blue-500 to-purple-500 flex items-center justify-center mr-4">
-                        <span className="text-2xl font-bold text-white">
+                    <RiDoubleQuotesL className="absolute top-5 left-5 text-blue-200 w-6 h-6" />
+                    <div className="flex items-center mb-5">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-teal-400 via-blue-500 to-purple-500 flex items-center justify-center mr-3">
+                        <span className="text-xl font-bold text-white">
                           {testimonial.author.charAt(0)}
                         </span>
                       </div>
                       <div>
-                        <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                        <p className="text-gray-500">{testimonial.position}</p>
-                        <p className="text-blue-500 text-sm">{testimonial.company}</p>
+                        <p className="font-semibold text-gray-900 text-sm">{testimonial.author}</p>
+                        <p className="text-gray-500 text-xs">{testimonial.position}</p>
+                        <p className="text-blue-500 text-xs">{testimonial.company}</p>
                       </div>
                     </div>
-                    <p className="text-lg mb-4 text-gray-700 pl-8">"{testimonial.quote}"</p>
-                    <div className="flex items-center justify-end w-full">
+                    <p className="text-base mb-4 text-gray-700 pl-6 flex-grow leading-relaxed">"{testimonial.quote}"</p>
+                    <div className="flex items-center justify-end w-full mt-auto pt-2">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <FaStar key={i} className="text-yellow-400 w-5 h-5" />
+                        <RiStarFill key={i} className="text-yellow-400 w-5 h-5" />
                       ))}
                     </div>
                   </motion.div>
@@ -537,7 +531,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-gray-900 mb-0">{faq.question}</h3>
-                  <FaChevronDown className={`ml-4 w-5 h-5 text-blue-400 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
+                  <RiArrowDownSLine className={`ml-4 w-5 h-5 text-blue-400 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-300 ${openFaq === index ? 'max-h-40 mt-4' : 'max-h-0 mt-0'}`}
@@ -552,21 +546,38 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
+      <section className="py-16 bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl mb-6 text-gray-900 font-bold">Let's Elevate Your Support Game</h2>
-            <p className="text-xl mb-8 text-gray-700">Talk to us about how AI can drive your support efficiency.</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <div className="mb-6">
+              <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-teal-200 via-blue-200 to-purple-200 text-blue-700 text-sm font-medium mb-4 shadow-sm">
+                Ready to Transform Your Business?
+              </span>
+            </div>
+            
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-gray-900 leading-tight">
+              AI-Automated Customer Service
+              <br />
+              <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent mt-2 inline-block">
+                24/7 Assistance
+              </span>
+            </h3>
+            
             <Link href="/contact">
               <motion.button 
-                className="relative overflow-hidden bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-lg hover:from-teal-500 hover:to-purple-600 transition-all duration-300"
+                className="relative overflow-hidden bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-12 py-5 rounded-xl text-lg font-semibold shadow-xl hover:from-purple-500 hover:to-teal-400 hover:shadow-blue-300/60 hover:ring-4 hover:ring-blue-200/40 transition-all duration-300 focus:outline-none"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Get Started Today</span>
+                <span className="relative z-10">Experience Our Voice Bot</span>
               </motion.button>
             </Link>
-          </div>  
+          </motion.div>  
         </div>
       </section>
 

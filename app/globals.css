@@ -3,18 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 17, 24, 39;
-  --background-end-rgb: 17, 24, 39;
+  --foreground-rgb: 55, 65, 81;
+  --icon-gradient: linear-gradient(to right, #2dd4bf, #3b82f6, #a855f7);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, rgba(230, 255, 250, 1), rgba(227, 242, 253, 1), rgba(243, 232, 255, 1));
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  height: 100%;
+  position: relative;
 }
 
 /* Custom scrollbar */
@@ -40,6 +41,9 @@ body {
 html {
   scrollbar-width: thin;
   scrollbar-color: #6366f1 #f8fafc; /* thumb, track */
+  background-color: white;
+  overscroll-behavior-y: contain;
+  height: 100%;
 }
 
 @keyframes fadeInUp {
@@ -95,4 +99,119 @@ html {
 .intersection-observer.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Testimonial Slider Styles */
+.testimonial-slider .slick-dots {
+  bottom: -50px;
+  text-align: center;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.testimonial-slider .slick-dots li {
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.testimonial-slider .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  border: 2px solid transparent;
+  padding: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-slider .slick-dots li button:before {
+  display: none;
+}
+
+.testimonial-slider .slick-dots li button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #a3bffa, #667eea);
+}
+
+.testimonial-slider .slick-dots li.slick-active button {
+  width: 40px;
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #4fd1c7, #3b82f6, #8b5cf6);
+  transform: scale(1);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-slider .slick-dots li.slick-active button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Hide navigation arrows */
+.testimonial-slider .slick-prev,
+.testimonial-slider .slick-next {
+  display: none !important;
+}
+
+/* Add subtle animation to dots */
+.testimonial-slider .slick-dots li button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.testimonial-slider .slick-dots li.slick-active button::after {
+  width: 100%;
+  height: 100%;
+}
+
+.gradient-icon {
+  fill: url(#iconGradient);
+}
+
+.gradient-icon path {
+  fill: inherit;
+}
+
+.gradient-icon svg {
+  fill: inherit;
+}
+
+.gradient-icon * {
+  fill: inherit;
+}
+
+@media (max-width: 768px) {
+  .testimonial-slider .slick-dots {
+    bottom: -40px;
+    gap: 8px;
+  }
+  
+  .testimonial-slider .slick-dots li button {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .testimonial-slider .slick-dots li.slick-active button {
+    width: 32px;
+    height: 10px;
+    border-radius: 5px;
+  }
 }

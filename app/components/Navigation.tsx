@@ -4,41 +4,64 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { FaChevronDown, FaChevronUp, FaChevronRight } from "react-icons/fa";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
+interface NavLink {
+  href: string;
+  label: string;
+  badge?: string;
+  optional?: boolean;
+}
+
+const navLinks: NavLink[] = [];
+
+const aboutLinks = [
+  { href: "/about/overview", label: "Overview" },
+  { href: "/about/testimonials", label: "Testimonials" },
+  { href: "/about/case-studies", label: "Case Studies" },
 ];
 
-const solutionsLinks = [
-  { href: "/realestate", label: "Real Estate", icon: "🏠" },
-  { href: "/hospital", label: "Healthcare", icon: "🏥" },
-  { href: "/hospitality", label: "Hospitality", icon: "🏨" },
-  { href: "/automobile", label: "Automobile", icon: "🚗" },
-  { href: "/bfsi", label: "BFSI", icon: "🏦" },
-  { href: "/insurance", label: "Insurance", icon: "🛡️" },
-  { href: "/manufacturing", label: "Manufacturing", icon: "🏭" },
-  { href: "/retail", label: "Retail", icon: "🛍️" },
-  { href: "/travel-tourism", label: "Travel & Tourism", icon: "✈️" },
-  { href: "/voice-ai", label: "Try It", icon: "🤖" },
+const solutionsByIndustry = [
+  { href: "/solutions/real-estate", label: "Real Estate" },
+  { href: "/solutions/hospital", label: "Hospital" },
+  { href: "/solutions/hospitality", label: "Hospitality" },
+  { href: "/solutions/automobile", label: "Automobile" },
+  { href: "/solutions/bfsi", label: "BFSI" },
+  { href: "/solutions/insurance", label: "Insurance" },
+  { href: "/solutions/manufacturing", label: "Manufacturing" },
+  { href: "/solutions/retail", label: "Retail" },
+  { href: "/solutions/travel-tourism", label: "Travel And Tourism" },
 ];
 
-const blogLinks = [
-  { href: "/solutions/omnichannel-customer-service", label: "Omnichannel Customer Service" },
-  { href: "/solutions/automated-customer-service", label: "Automated Customer Service" },
-  { href: "/solutions/ai-voice-bots", label: "AI Voice Bots" },
-  { href: "/solutions/how-to-improve-csat", label: "How to Improve CSAT" },
+const solutionsByUseCase = [
+  { href: "/solutions/customer-acquisition", label: "Customer Acquisition & Engagement" },
+  { href: "/solutions/retention-operations", label: "Retention, Feedback & Operations" },
+];
+
+const integrationsLinks = [
+  { href: "/integrations/crm", label: "CRM Integrations" },
+  { href: "/integrations/telephony", label: "Telephony Integrations" },
+];
+
+const resourcesLinks = [
+  { href: "/resources/blog", label: "Blog" },
+  { href: "/resources/webinars", label: "Webinars", badge: "Coming Soon" },
+  { href: "/resources/product-guides", label: "Product Guides", optional: true },
+  { href: "/resources/whitepapers", label: "Whitepapers", optional: true },
 ];
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-  const [isBlogsOpen, setIsBlogsOpen] = useState(false);
+  const [isIntegrationsOpen, setIsIntegrationsOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
-  const [mobileBlogsOpen, setMobileBlogsOpen] = useState(false);
+  const [mobileIntegrationsOpen, setMobileIntegrationsOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  const aboutTimeout = useRef<NodeJS.Timeout | null>(null);
   const solutionsTimeout = useRef<NodeJS.Timeout | null>(null);
-  const blogsTimeout = useRef<NodeJS.Timeout | null>(null);
+  const integrationsTimeout = useRef<NodeJS.Timeout | null>(null);
+  const resourcesTimeout = useRef<NodeJS.Timeout | null>(null);
 
   return (
     <>
@@ -49,7 +72,8 @@ export default function Navigation() {
               <img src="/logo.jpeg" alt="Caller.Digital Logo" className="w-8 h-8" />
               <span className="text-2xl font-bold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">Caller.Digital</span>
             </Link>
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
+              {/* Simple nav links */}
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -59,6 +83,48 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* About Caller Digital Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => {
+                  if (aboutTimeout.current) clearTimeout(aboutTimeout.current);
+                  setIsAboutOpen(true);
+                }}
+                onMouseLeave={() => {
+                  aboutTimeout.current = setTimeout(() => setIsAboutOpen(false), 200);
+                }}
+              >
+                <button
+                  className="text-gray-700 hover:text-blue-500 transition-colors flex items-center space-x-1 font-bold focus:outline-none"
+                  onClick={() => setIsAboutOpen(!isAboutOpen)}
+                >
+                  <span>About Caller Digital</span>
+                  <FaChevronDown className="w-3 h-3" />
+                </button>
+                {isAboutOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50">
+                    {aboutLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="block px-3 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Product Link */}
+              <Link
+                href="/product"
+                className="text-gray-700 hover:text-blue-500 transition-colors font-bold"
+              >
+                Product
+              </Link>
+
               {/* Solutions Dropdown */}
               <div
                 className="relative"
@@ -72,87 +138,75 @@ export default function Navigation() {
               >
                 <button
                   className="text-gray-700 hover:text-blue-500 transition-colors flex items-center space-x-1 font-bold focus:outline-none"
-                  onClick={() => setIsSolutionsOpen((open) => !open)}
-                  aria-haspopup="true"
-                  aria-expanded={isSolutionsOpen}
-                  tabIndex={0}
-                  onFocus={() => setIsSolutionsOpen(true)}
-                  onBlur={() => solutionsTimeout.current = setTimeout(() => setIsSolutionsOpen(false), 200)}
+                  onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
                 >
                   <span>Solutions</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <FaChevronDown className="w-3 h-3" />
                 </button>
                 {isSolutionsOpen && (
-                  <div
-                    className="absolute top-full right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 divide-y divide-gray-200"
-                    onMouseEnter={() => {
-                      if (solutionsTimeout.current) clearTimeout(solutionsTimeout.current);
-                      setIsSolutionsOpen(true);
-                    }}
-                    onMouseLeave={() => {
-                      solutionsTimeout.current = setTimeout(() => setIsSolutionsOpen(false), 200);
-                    }}
-                  >
-                    {solutionsLinks.map((link, idx) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="block px-6 py-4 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-colors font-bold flex items-center space-x-3 text-base rounded-md focus:bg-blue-50 focus:text-blue-500"
-                        tabIndex={0}
-                        style={{ minWidth: 200 }}
-                      >
-                        <span>{link.icon}</span>
-                        <span>{link.label}</span>
-                      </Link>
-                    ))}
+                  <div className="absolute top-full left-0 mt-2 w-[420px] bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50">
+                    <div className="grid grid-cols-2 gap-0">
+                      {/* By Industries */}
+                      <div className="px-2 border-r border-gray-100">
+                        <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2 pl-1">By Industries</h3>
+                        <div className="space-y-0.5">
+                          {solutionsByIndustry.map((link) => (
+                            <Link
+                              key={link.href}
+                              href={link.href}
+                              className="block px-1 py-1.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-sm"
+                            >
+                              {link.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {/* By Use Cases */}
+                      <div className="px-2">
+                        <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2 pl-1">By Use Cases</h3>
+                        <div className="space-y-0.5">
+                          {solutionsByUseCase.map((link) => (
+                            <Link
+                              key={link.href}
+                              href={link.href}
+                              className="block px-1 py-1.5 font-semibold text-sm text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all rounded-sm"
+                            >
+                              {link.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
-              {/* Blogs Dropdown */}
+
+              {/* Integrations Dropdown */}
               <div
                 className="relative"
-                onMouseEnter={() => {
-                  if (blogsTimeout.current) clearTimeout(blogsTimeout.current);
-                  setIsBlogsOpen(true);
-                }}
-                onMouseLeave={() => {
-                  blogsTimeout.current = setTimeout(() => setIsBlogsOpen(false), 200);
-                }}
-              >
-                <button
-                  className="text-gray-700 hover:text-blue-500 transition-colors flex items-center space-x-1 font-bold focus:outline-none"
-                  onClick={() => setIsBlogsOpen((open) => !open)}
-                  aria-haspopup="true"
-                  aria-expanded={isBlogsOpen}
-                  tabIndex={0}
-                  onFocus={() => setIsBlogsOpen(true)}
-                  onBlur={() => blogsTimeout.current = setTimeout(() => setIsBlogsOpen(false), 200)}
-                >
-                  <span>Blogs</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {isBlogsOpen && (
-                  <div
-                    className="absolute top-full right-0 mt-2 w-[400px] bg-white rounded-lg shadow-lg border border-gray-200 py-2 divide-y divide-gray-200"
                     onMouseEnter={() => {
-                      if (blogsTimeout.current) clearTimeout(blogsTimeout.current);
-                      setIsBlogsOpen(true);
+                  if (integrationsTimeout.current) clearTimeout(integrationsTimeout.current);
+                  setIsIntegrationsOpen(true);
                     }}
                     onMouseLeave={() => {
-                      blogsTimeout.current = setTimeout(() => setIsBlogsOpen(false), 200);
+                  integrationsTimeout.current = setTimeout(() => setIsIntegrationsOpen(false), 200);
                     }}
                   >
-                    {blogLinks.map((link, idx) => (
+                <button
+                  className="text-gray-700 hover:text-blue-500 transition-colors flex items-center space-x-1 font-bold focus:outline-none"
+                  onClick={() => setIsIntegrationsOpen(!isIntegrationsOpen)}
+                >
+                  <span>Integrations</span>
+                  <FaChevronDown className="w-3 h-3" />
+                </button>
+                {isIntegrationsOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50">
+                    {integrationsLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block px-6 py-4 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-colors font-bold whitespace-pre-line break-words text-base rounded-md focus:bg-blue-50 focus:text-blue-500"
-                        tabIndex={0}
-                        style={{ minWidth: 200 }}
+                        className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm"
                       >
                         {link.label}
                       </Link>
@@ -160,14 +214,61 @@ export default function Navigation() {
                   </div>
                 )}
               </div>
+
+              {/* Resources Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => {
+                  if (resourcesTimeout.current) clearTimeout(resourcesTimeout.current);
+                  setIsResourcesOpen(true);
+                }}
+                onMouseLeave={() => {
+                  resourcesTimeout.current = setTimeout(() => setIsResourcesOpen(false), 200);
+                }}
+              >
+                <button
+                  className="text-gray-700 hover:text-blue-500 transition-colors flex items-center space-x-1 font-bold focus:outline-none"
+                  onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                >
+                  <span>Resources</span>
+                  <FaChevronDown className="w-3 h-3" />
+                </button>
+                {isResourcesOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50">
+                    {resourcesLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="flex items-center justify-between px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm"
+                      >
+                        <span>{link.label}</span>
+                        {link.badge && (
+                          <span className="text-xs bg-gradient-to-r from-teal-400 to-blue-500 text-white px-1.5 py-0.5 rounded-full">
+                            {link.badge}
+                          </span>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Contact Us */}
+              <Link
+                href="/contact"
+                className="text-gray-700 hover:text-blue-500 transition-colors font-bold"
+              >
+                Contact Us
+              </Link>
+
               {/* Book Demo Button */}
               <a
                 href="https://calendly.com/vaibhav_applore/voice-ai-consultation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-4 py-2 rounded-lg font-bold hover:from-teal-500 hover:to-purple-600 transition-all duration-300 shadow-md"
+                className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-5 py-2.5 rounded-lg font-bold hover:from-teal-500 hover:to-purple-600 transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                Book Demo
+                Book A Demo
               </a>
             </div>
             {/* Mobile menu button - always visible in mobile view */}
@@ -192,18 +293,41 @@ export default function Navigation() {
           <div className="px-4 py-8 flex flex-col min-h-screen w-full max-w-sm mx-auto">
             <nav className="w-full">
               <ul className="space-y-1">
-              {navLinks.map((link) => (
-                  <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-4 py-3 text-blue-700 hover:bg-blue-50 rounded-lg text-lg font-bold transition-colors"
+                {/* About Caller Digital */}
+                <button
+                  className="flex items-center justify-between w-full px-4 py-2 text-blue-700 text-xs font-semibold uppercase tracking-wider focus:outline-none"
+                  onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                  aria-expanded={mobileAboutOpen}
                 >
-                  {link.label}
-                </Link>
-                  </li>
-              ))}
+                  <span>About Caller Digital</span>
+                  {mobileAboutOpen ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
+                </button>
+                <ul className={`space-y-1 transition-all duration-200 ease-in-out overflow-hidden ${mobileAboutOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                  {aboutLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg text-base font-semibold transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Product */}
+                <li>
+                  <Link
+                    href="/product"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block px-4 py-3 text-blue-700 hover:bg-blue-50 rounded-lg text-lg font-bold transition-colors"
+                  >
+                    Product
+                  </Link>
+                </li>
               </ul>
+              
               {/* Book Demo Button for Mobile */}
               <div className="my-4">
                 <a
@@ -213,67 +337,102 @@ export default function Navigation() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-4 py-3 rounded-lg text-lg font-bold text-center hover:from-teal-500 hover:to-purple-600 transition-all duration-300 shadow-md"
                 >
-                  Book Demo
+                  Book A Demo
                 </a>
               </div>
+              
               <div className="my-4 border-t border-blue-100" />
+              
+              {/* Solutions */}
               <button
                 className="flex items-center justify-between w-full px-4 py-2 text-blue-700 text-xs font-semibold uppercase tracking-wider focus:outline-none"
-                onClick={() => setMobileSolutionsOpen((open) => !open)}
+                onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
                 aria-expanded={mobileSolutionsOpen}
-                aria-controls="mobile-solutions-list"
               >
                 <span>Solutions</span>
-                {mobileSolutionsOpen ? (
-                  <FaChevronUp className="w-4 h-4" />
-                ) : (
-                  <FaChevronDown className="w-4 h-4" />
-                )}
+                {mobileSolutionsOpen ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
               </button>
-              <ul
-                id="mobile-solutions-list"
-                className={`space-y-1 transition-all duration-200 ease-in-out overflow-hidden ${mobileSolutionsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}
+              <ul className={`space-y-1 transition-all duration-200 ease-in-out overflow-hidden ${mobileSolutionsOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                <li className="px-4 py-2">
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">By Industries</p>
+                  {solutionsByIndustry.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block px-2 py-2 text-gray-700 hover:bg-blue-50 rounded-lg text-sm font-medium transition-colors mb-1"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </li>
+                <li className="px-4 py-2">
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">By Use Cases</p>
+                  {solutionsByUseCase.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block px-2 py-2 text-gray-700 hover:bg-blue-50 rounded-lg text-sm font-medium transition-colors mb-1"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </li>
+              </ul>
+              
+              <div className="my-4 border-t border-blue-100" />
+              
+              {/* Integrations */}
+              <button
+                className="flex items-center justify-between w-full px-4 py-2 text-blue-700 text-xs font-semibold uppercase tracking-wider focus:outline-none"
+                onClick={() => setMobileIntegrationsOpen(!mobileIntegrationsOpen)}
+                aria-expanded={mobileIntegrationsOpen}
               >
-                {solutionsLinks.map((link) => (
+                <span>Integrations</span>
+                {mobileIntegrationsOpen ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
+              </button>
+              <ul className={`space-y-1 transition-all duration-200 ease-in-out overflow-hidden ${mobileIntegrationsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                {integrationsLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center justify-between px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg text-base font-semibold transition-colors"
+                      className="block px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg text-base font-semibold transition-colors"
                     >
-                      <span>{link.label}</span>
-                      <FaChevronRight className="ml-2 w-4 h-4 text-gray-400" />
+                      {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
+              
               <div className="my-4 border-t border-blue-100" />
+              
+              {/* Resources */}
               <button
                 className="flex items-center justify-between w-full px-4 py-2 text-blue-700 text-xs font-semibold uppercase tracking-wider focus:outline-none"
-                onClick={() => setMobileBlogsOpen((open) => !open)}
-                aria-expanded={mobileBlogsOpen}
-                aria-controls="mobile-blogs-list"
+                onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+                aria-expanded={mobileResourcesOpen}
               >
-                <span>Blogs</span>
-                {mobileBlogsOpen ? (
-                  <FaChevronUp className="w-4 h-4" />
-                ) : (
-                  <FaChevronDown className="w-4 h-4" />
-                )}
+                <span>Resources</span>
+                {mobileResourcesOpen ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
               </button>
-              <ul
-                id="mobile-blogs-list"
-                className={`space-y-1 mb-8 transition-all duration-200 ease-in-out overflow-hidden ${mobileBlogsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}
-              >
-                {blogLinks.map((link) => (
+              <ul className={`space-y-1 mb-8 transition-all duration-200 ease-in-out overflow-hidden ${mobileResourcesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                {resourcesLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center justify-between px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg text-base font-semibold transition-colors"
+                      className="block px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg text-base font-semibold transition-colors"
                     >
+                      <div className="flex items-center">
                       <span>{link.label}</span>
-                      <FaChevronRight className="ml-2 w-4 h-4 text-gray-400" />
+                        {link.badge && (
+                          <span className="ml-2 text-xs bg-gradient-to-r from-teal-400 to-blue-500 text-white px-1.5 py-0.5 rounded-full">
+                            {link.badge}
+                          </span>
+                        )}
+                      </div>
                     </Link>
                   </li>
                 ))}

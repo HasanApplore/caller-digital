@@ -51,7 +51,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.className} min-h-screen flex flex-col justify-between`}> 
+      <body className={`${inter.className} min-h-screen flex flex-col justify-between bg-white overscroll-none`}> 
         <SecurityProvider>
           <Toaster 
             position="top-right"
