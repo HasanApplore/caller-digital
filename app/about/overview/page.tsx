@@ -9,15 +9,15 @@ export default function Overview() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
       {/* Hero Section */}
-      <section className="relative py-16 overflow-hidden">
+      <section className="relative py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8"
+            className="text-center mb-4 mt-8"
           >
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-gray-900 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 leading-tight">
               Transforming Customer Service with
               <br />
               <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent mt-2 inline-block">
@@ -42,20 +42,20 @@ export default function Overview() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-12">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Mission */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
             >
-              <div className="mb-6">
-                <RiRocketFill className="w-12 h-12 text-violet-500" />
+              <div className="mb-4">
+                <RiRocketFill className="w-10 h-10 text-violet-500" />
               </div>
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Mission</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">Our Mission</h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 To empower businesses with intelligent voice solutions that transform customer interactions, drive efficiency, and deliver exceptional experiences at scale.
               </p>
@@ -66,12 +66,12 @@ export default function Overview() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
             >
-              <div className="mb-6">
-                <RiEyeFill className="w-12 h-12 text-violet-500" />
+              <div className="mb-4">
+                <RiEyeFill className="w-10 h-10 text-violet-500" />
               </div>
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Vision</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">Our Vision</h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 To be the global leader in AI-powered voice solutions, setting new standards in customer service automation and multilingual communication.
               </p>
@@ -240,7 +240,7 @@ export default function Overview() {
               {
                 name: "Abhinav Rathor",
                 role: "Cofounder & CTO",
-                image: "/IMG_8070 (1).jpg",
+                image: "/abhinav.png",
                 bio: "Technology visionary leading the development of cutting-edge AI and cloud solutions for enterprise scalability.",
                 linkedin: "https://www.linkedin.com/in/abhinav-rathor/",
                 highlights: [

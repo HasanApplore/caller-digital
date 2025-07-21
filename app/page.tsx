@@ -183,37 +183,37 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                          {[
-                {
+            {[
+              {
                   icon: <RiRobotFill className="w-12 h-12 text-violet-500" />,
-                  title: "AI-Powered Voice Bots",
-                  description: "Advanced natural language processing for human-like conversations and intelligent responses."
-                },
-                {
+                title: "AI-Powered Voice Bots",
+                description: "Advanced natural language processing for human-like conversations and intelligent responses."
+              },
+              {
                   icon: <RiCustomerService2Fill className="w-12 h-12 text-violet-500" />,
-                  title: "24/7 Availability",
-                  description: "Round-the-clock customer support without the overhead of maintaining large support teams."
-                },
-                {
+                title: "24/7 Availability",
+                description: "Round-the-clock customer support without the overhead of maintaining large support teams."
+              },
+              {
                   icon: <RiTranslate2 className="w-12 h-12 text-violet-500" />,
-                  title: "Multilingual Support",
-                  description: "Serve customers in their preferred language with automatic translation capabilities."
-                },
-                {
+                title: "Multilingual Support",
+                description: "Serve customers in their preferred language with automatic translation capabilities."
+              },
+              {
                   icon: <RiBarChartFill className="w-12 h-12 text-violet-500" />,
-                  title: "Performance Analytics",
-                  description: "Comprehensive insights into call quality, customer satisfaction, and operational efficiency."
-                },
-                {
+                title: "Performance Analytics",
+                description: "Comprehensive insights into call quality, customer satisfaction, and operational efficiency."
+              },
+              {
                   icon: <RiDatabase2Fill className="w-12 h-12 text-violet-500" />,
-                  title: "Seamless Integration",
-                  description: "Easy integration with your existing CRM, helpdesk, and business systems."
-                },
-                {
+                title: "Seamless Integration",
+                description: "Easy integration with your existing CRM, helpdesk, and business systems."
+              },
+              {
                   icon: <RiServerFill className="w-12 h-12 text-violet-500" />,
-                  title: "Enterprise Security",
-                  description: "Bank-level security with encryption, compliance, and data protection measures."
-                }
+                title: "Enterprise Security",
+                description: "Bank-level security with encryption, compliance, and data protection measures."
+              }
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -249,27 +249,27 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                          {[
-                {
+            {[
+              {
                   icon: <RiFlashlightFill className="w-8 h-8 text-violet-500" />,
-                  title: "Fast Response",
-                  description: "Instant customer support with sub-second response times"
-                },
-                {
+                title: "Fast Response",
+                description: "Instant customer support with sub-second response times"
+              },
+              {
                   icon: <RiLineChartFill className="w-8 h-8 text-violet-500" />,
-                  title: "Scalable",
-                  description: "Handle unlimited concurrent calls without performance degradation"
-                },
-                {
+                title: "Scalable",
+                description: "Handle unlimited concurrent calls without performance degradation"
+              },
+              {
                   icon: <RiShieldKeyholeFill className="w-8 h-8 text-violet-500" />,
-                  title: "Secure",
-                  description: "Enterprise-grade security with end-to-end encryption"
-                },
-                {
+                title: "Secure",
+                description: "Enterprise-grade security with end-to-end encryption"
+              },
+              {
                   icon: <RiApps2Fill className="w-8 h-8 text-violet-500" />,
-                  title: "Integrations",
-                  description: "Seamless integration with your existing business tools"
-                }
+                title: "Integrations",
+                description: "Seamless integration with your existing business tools"
+              }
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -305,67 +305,67 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                          {[
-                {
+            {[
+              {
                   icon: <RiBriefcase4Fill className="w-12 h-12 text-violet-500" />,
-                  title: "Manufacturing & Industrial",
-                  description: "Streamline production support, automate maintenance requests, and handle supplier inquiries with AI-powered voice solutions.",
-                  useCases: [
-                    "24/7 Equipment Maintenance Support",
-                    "Automated Quality Control Reports",
-                    "Supply Chain Query Resolution"
-                  ]
-                },
-                {
+                title: "Manufacturing & Industrial",
+                description: "Streamline production support, automate maintenance requests, and handle supplier inquiries with AI-powered voice solutions.",
+                useCases: [
+                  "24/7 Equipment Maintenance Support",
+                  "Automated Quality Control Reports",
+                  "Supply Chain Query Resolution"
+                ]
+              },
+              {
                   icon: <RiBankFill className="w-12 h-12 text-violet-500" />,
-                  title: "Fintech & Banking",
-                  description: "Enhance customer support with AI agents handling account queries, fraud detection, and transaction processing.",
-                  useCases: [
-                    "Automated Transaction Verification",
-                    "24/7 Banking Support",
-                    "Fraud Alert Management"
-                  ]
-                },
-                {
+                title: "Fintech & Banking",
+                description: "Enhance customer support with AI agents handling account queries, fraud detection, and transaction processing.",
+                useCases: [
+                  "Automated Transaction Verification",
+                  "24/7 Banking Support",
+                  "Fraud Alert Management"
+                ]
+              },
+              {
                   icon: <RiGraduationCapFill className="w-12 h-12 text-violet-500" />,
-                  title: "EdTech & Learning",
-                  description: "Transform educational support with AI-powered tutoring, enrollment assistance, and student services.",
-                  useCases: [
-                    "24/7 Student Support Services",
-                    "Automated Enrollment Assistance",
-                    "Course Information & Guidance"
-                  ]
-                },
-                {
+                title: "EdTech & Learning",
+                description: "Transform educational support with AI-powered tutoring, enrollment assistance, and student services.",
+                useCases: [
+                  "24/7 Student Support Services",
+                  "Automated Enrollment Assistance",
+                  "Course Information & Guidance"
+                ]
+              },
+              {
                   icon: <RiHomeSmileFill className="w-12 h-12 text-violet-500" />,
-                  title: "Real Estate",
-                  description: "Revolutionize property management with AI-powered leasing assistance, maintenance coordination, and tenant support.",
-                  useCases: [
-                    "Automated Property Inquiries",
-                    "24/7 Tenant Support",
-                    "Maintenance Request Processing"
-                  ]
-                },
-                {
+                title: "Real Estate",
+                description: "Revolutionize property management with AI-powered leasing assistance, maintenance coordination, and tenant support.",
+                useCases: [
+                  "Automated Property Inquiries",
+                  "24/7 Tenant Support",
+                  "Maintenance Request Processing"
+                ]
+              },
+              {
                   icon: <RiHospitalFill className="w-12 h-12 text-violet-500" />,
-                  title: "Healthcare",
-                  description: "Improve patient care with HIPAA-compliant AI solutions for appointment scheduling, follow-ups, and care coordination.",
-                  useCases: [
-                    "Automated Appointment Scheduling",
-                    "Patient Follow-up Calls",
-                    "Medical Record Assistance"
-                  ]
-                },
-                {
+                title: "Healthcare",
+                description: "Improve patient care with HIPAA-compliant AI solutions for appointment scheduling, follow-ups, and care coordination.",
+                useCases: [
+                  "Automated Appointment Scheduling",
+                  "Patient Follow-up Calls",
+                  "Medical Record Assistance"
+                ]
+              },
+              {
                   icon: <RiShoppingBag3Fill className="w-12 h-12 text-violet-500" />,
-                  title: "E-commerce",
-                  description: "Enhance customer experience with AI-powered order tracking, returns processing, and product support.",
-                  useCases: [
-                    "24/7 Order Status Updates",
-                    "Automated Returns Processing",
-                    "Product Information Support"
-                  ]
-                }
+                title: "E-commerce",
+                description: "Enhance customer experience with AI-powered order tracking, returns processing, and product support.",
+                useCases: [
+                  "24/7 Order Status Updates",
+                  "Automated Returns Processing",
+                  "Product Information Support"
+                ]
+              }
             ].map((industry, index) => (
               <motion.div
                 key={index}

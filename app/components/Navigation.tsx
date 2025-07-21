@@ -20,15 +20,15 @@ const aboutLinks = [
 ];
 
 const solutionsByIndustry = [
-  { href: "/solutions/real-estate", label: "Real Estate" },
-  { href: "/solutions/hospital", label: "Hospital" },
-  { href: "/solutions/hospitality", label: "Hospitality" },
-  { href: "/solutions/automobile", label: "Automobile" },
-  { href: "/solutions/bfsi", label: "BFSI" },
-  { href: "/solutions/insurance", label: "Insurance" },
-  { href: "/solutions/manufacturing", label: "Manufacturing" },
-  { href: "/solutions/retail", label: "Retail" },
-  { href: "/solutions/travel-tourism", label: "Travel And Tourism" },
+  { href: "/realestate", label: "Real Estate" },
+  { href: "/hospital", label: "Hospital" },
+  { href: "/hospitality", label: "Hospitality" },
+  { href: "/automobile", label: "Automobile" },
+  { href: "/bfsi", label: "BFSI" },
+  { href: "/insurance", label: "Insurance" },
+  { href: "/manufacturing", label: "Manufacturing" },
+  { href: "/retail", label: "Retail" },
+  { href: "/travel-tourism", label: "Travel And Tourism" },
 ];
 
 const solutionsByUseCase = [
@@ -108,7 +108,7 @@ export default function Navigation() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block px-3 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm"
+                        className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
                       >
                         {link.label}
                       </Link>
@@ -144,17 +144,17 @@ export default function Navigation() {
                   <FaChevronDown className="w-3 h-3" />
                 </button>
                 {isSolutionsOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-[420px] bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50">
-                    <div className="grid grid-cols-2 gap-0">
+                  <div className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-xl shadow-2xl border border-gray-100 py-6 z-50">
+                    <div className="grid grid-cols-2 gap-6 px-6">
                       {/* By Industries */}
-                      <div className="px-2 border-r border-gray-100">
-                        <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2 pl-1">By Industries</h3>
-                        <div className="space-y-0.5">
+                      <div>
+                        <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 px-3">By Industries</h3>
+                        <div className="space-y-1">
                           {solutionsByIndustry.map((link) => (
                             <Link
                               key={link.href}
                               href={link.href}
-                              className="block px-1 py-1.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-sm"
+                              className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
                             >
                               {link.label}
                             </Link>
@@ -163,14 +163,14 @@ export default function Navigation() {
                       </div>
                       
                       {/* By Use Cases */}
-                      <div className="px-2">
-                        <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2 pl-1">By Use Cases</h3>
-                        <div className="space-y-0.5">
+                      <div>
+                        <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 px-3">By Use Cases</h3>
+                        <div className="space-y-1">
                           {solutionsByUseCase.map((link) => (
                             <Link
                               key={link.href}
                               href={link.href}
-                              className="block px-1 py-1.5 font-semibold text-sm text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all rounded-sm"
+                              className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
                             >
                               {link.label}
                             </Link>
@@ -178,6 +178,7 @@ export default function Navigation() {
                         </div>
                       </div>
                     </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 rounded-b-xl"></div>
                   </div>
                 )}
               </div>
@@ -206,7 +207,7 @@ export default function Navigation() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm"
+                        className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
                       >
                         {link.label}
                       </Link>
@@ -239,7 +240,7 @@ export default function Navigation() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="flex items-center justify-between px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm"
+                        className="flex items-center justify-between px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
                       >
                         <span>{link.label}</span>
                         {link.badge && (
