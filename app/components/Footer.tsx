@@ -12,14 +12,14 @@ export default function Footer() {
       name: 'Instagram',
       url: 'https://www.instagram.com/caller.digital?igsh=cHYxaWI0Z3k1cGh3&utm_source=qr',
       icon: (
-        <Image src="/social.svg" alt="Instagram" width={20} height={20} className="w-5 h-5 transition-colors duration-200 hover:text-purple-600" />
+        <Image src="/instagram.svg" alt="Instagram" width={20} height={20} className="w-5 h-5 transition-colors duration-200 hover:text-purple-600" />
       ),
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/company/caller-digital/',
       icon: (
-        <Image src="/video.svg" alt="LinkedIn" width={20} height={20} className="w-5 h-5 transition-colors duration-200 hover:text-purple-600" />
+        <Image src="/linkedin.svg" alt="LinkedIn" width={20} height={20} className="w-5 h-5 transition-colors duration-200 hover:text-purple-600" />
       ),
     },
   ];

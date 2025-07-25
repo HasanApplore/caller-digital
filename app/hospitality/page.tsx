@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Footer from '@/app/components/Footer';
+import EnterpriseCTA from '@/app/components/EnterpriseCTA';
 
 const faqs = [
   {
@@ -141,6 +142,7 @@ export default function HospitalityPage() {
           </div>
         </div>
       </main>
+      <EnterpriseCTA />
       <Footer />
     </>
   );

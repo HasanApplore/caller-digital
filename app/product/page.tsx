@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { RiVoiceprintFill, RiCustomerService2Fill, RiBarChartBoxFill, RiGlobalFill, RiRobot2Fill, RiHeadphoneFill, RiDashboardFill, RiPieChartFill } from 'react-icons/ri';
 import Footer from '@/app/components/Footer';
+import EnterpriseCTA from '@/app/components/EnterpriseCTA';
 
 export default function Product() {
   // Animation variants
@@ -258,32 +259,7 @@ export default function Product() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100 text-center relative overflow-hidden"
-          >
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Ready to Transform Your Customer Service?</h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Experience the power of AI-driven voice solutions with a personalized demo
-              </p>
-              <a
-                href="https://calendly.com/vaibhav_applore/voice-ai-consultation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-teal-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Book Your Demo Now
-              </a>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-blue-50/50 to-purple-50/50 opacity-50" />
-          </motion.div>
-        </div>
-      </section>
+      <EnterpriseCTA />
 
       <Footer />
     </main>

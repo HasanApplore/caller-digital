@@ -6,6 +6,7 @@ import Vapi from '@vapi-ai/web';
 import Link from 'next/link';
 import UserDetailsModal from '../components/UserDetailsModal';
 import Footer from '../components/Footer';
+import EnterpriseCTA from '../components/EnterpriseCTA';
 
 export default function DemoPage() {
   const [isCallActive, setIsCallActive] = useState(false);
@@ -411,6 +412,7 @@ export default function DemoPage() {
                   isLoading={isLoading}
         />
       </main>
+      <EnterpriseCTA />
       <Footer />
     </>
   );

@@ -5,6 +5,7 @@ import { RiRocketFill, RiEyeFill, RiBarChartBoxFill, RiShieldCheckFill, RiScales
 import { TypeAnimation } from 'react-type-animation';
 import Footer from '../../components/Footer';
 import { useState } from 'react';
+import EnterpriseCTA from "../../components/EnterpriseCTA";
 
 // Blog type
 interface Blog {
@@ -284,63 +285,72 @@ export default function Overview() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 px-4 sm:px-6 lg:px-8 items-center">
           {/* Left: Text and Feature Cards */}
           <div className="flex-[6] flex flex-col items-start justify-center w-full">
-            <span className="uppercase tracking-wider text-3xl font-extrabold text-blue-600 mb-2">WHY CALLER.DIGITAL</span>
-            <p className='text-xl text-black font-medium md:text-xl mt-2 mb-6'>Trusted by leading brands, Caller.Digital combines powerful AI with real-time analytics and seamless integrations. No hidden fees. No tech headaches. Just voice AI that works.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-2xl">
-              {/* Card 1 */}
-              <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
-                <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
-                  {/* LockClosed Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V7a4.5 4.5 0 10-9 0v3.5M5.25 10.5h13.5M6.75 10.5v7.25A2.25 2.25 0 009 20h6a2.25 2.25 0 002.25-2.25V10.5" />
-                  </svg>
+            <span className=" tracking-wider text-4xl font-extrabold text-blue-600 mb-4">Why Caller Digital</span>
+            <p className='text-lg text-gray-700 mb-8 max-w-xl'>Trusted by leading brands, Caller.Digital combines powerful AI with real-time analytics and seamless integrations. No hidden fees. No tech headaches. Just voice AI that works.</p>
+            <div className="w-full max-w-2xl">
+              {/* First Row - 3 cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
+                {/* Card 1 */}
+                <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
+                  <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+                    {/* LockClosed Icon */}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V7a4.5 4.5 0 10-9 0v3.5M5.25 10.5h13.5M6.75 10.5v7.25A2.25 2.25 0 009 20h6a2.25 2.25 0 002.25-2.25V10.5" />
+                    </svg>
+                  </div>
+                  <div className="font-bold text-gray-900 mb-1">No Hidden Costs</div>
+                  <div className="text-gray-600 text-sm">Transparent pricing with no surprise charges</div>
                 </div>
-                <div className="font-bold text-gray-900 mb-1">No Hidden Costs</div>
-                <div className="text-gray-600 text-sm">Transparent pricing with no surprise charges</div>
+                {/* Card 2 */}
+                <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
+                  <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+                    {/* ChartBar Icon */}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 17v-2a2 2 0 012-2h2a2 2 0 012 2v2m0 0v2a2 2 0 002 2h2a2 2 0 002-2v-2m0 0v-2a2 2 0 012-2h2a2 2 0 012 2v2" />
+                    </svg>
+                  </div>
+                  <div className="font-bold text-gray-900 mb-1">High Scalability</div>
+                  <div className="text-gray-600 text-sm">Supports 200K+ minutes/month per client</div>
+                </div>
+                {/* Card 3 */}
+                <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
+                  <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+                    {/* GlobeAlt Icon */}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 0c2.21 0 4 4.03 4 9s-1.79 9-4 9-4-4.03-4-9 1.79-9 4-9z" />
+                    </svg>
+                  </div>
+                  <div className="font-bold text-gray-900 mb-1">Multilingual Voice AI</div>
+                  <div className="text-gray-600 text-sm">20+ language support built-in</div>
+                </div>
               </div>
-              {/* Card 2 */}
-              <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
-                <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
-                  {/* ChartBar Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 17v-2a2 2 0 012-2h2a2 2 0 012 2v2m0 0v2a2 2 0 002 2h2a2 2 0 002-2v-2m0 0v-2a2 2 0 012-2h2a2 2 0 012 2v2" />
-                  </svg>
+              
+              {/* Second Row - 2 cards centered */}
+              <div className="flex justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5" style={{ maxWidth: 'calc(66.666667% - 1.25rem)' }}>
+                  {/* Card 4 */}
+                  <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
+                    <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+                      {/* Plug Icon */}
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v6.75m10.5-6.75v6.75M4.5 21h15M4.5 21a2.25 2.25 0 01-2.25-2.25V15a2.25 2.25 0 012.25-2.25h15A2.25 2.25 0 0121 15v3.75A2.25 2.25 0 0118.75 21H4.5z" />
+                      </svg>
+                    </div>
+                    <div className="font-bold text-gray-900 mb-1">Easy Integration</div>
+                    <div className="text-gray-600 text-sm">Works with CRMs, WhatsApp, IVR, and more</div>
+                  </div>
+                  {/* Card 5 */}
+                  <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
+                    <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+                      {/* ChartPie Icon */}
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 3v8.25H3m8.25 0A8.25 8.25 0 1021 12a8.25 8.25 0 00-8.25-8.25z" />
+                      </svg>
+                    </div>
+                    <div className="font-bold text-gray-900 mb-1">Enterprise-Grade Analytics</div>
+                    <div className="text-gray-600 text-sm">Custom reporting and dashboards</div>
+                  </div>
                 </div>
-                <div className="font-bold text-gray-900 mb-1">High Scalability</div>
-                <div className="text-gray-600 text-sm">Supports 200K+ minutes/month per client</div>
-              </div>
-              {/* Card 3 */}
-              <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
-                <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
-                  {/* GlobeAlt Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 0c2.21 0 4 4.03 4 9s-1.79 9-4 9-4-4.03-4-9 1.79-9 4-9z" />
-                  </svg>
-                </div>
-                <div className="font-bold text-gray-900 mb-1">Multilingual Voice AI</div>
-                <div className="text-gray-600 text-sm">20+ language support built-in</div>
-              </div>
-              {/* Card 4 */}
-              <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
-                <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
-                  {/* Plug Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v6.75m10.5-6.75v6.75M4.5 21h15M4.5 21a2.25 2.25 0 01-2.25-2.25V15a2.25 2.25 0 012.25-2.25h15A2.25 2.25 0 0121 15v3.75A2.25 2.25 0 0118.75 21H4.5z" />
-                  </svg>
-                </div>
-                <div className="font-bold text-gray-900 mb-1">Easy Integration</div>
-                <div className="text-gray-600 text-sm">Works with CRMs, WhatsApp, IVR, and more</div>
-              </div>
-              {/* Card 5 */}
-              <div className="bg-gray-50 rounded-xl shadow-sm p-5 flex flex-col items-start">
-                <div className="w-10 h-10 mb-3 bg-blue-100 rounded-full flex items-center justify-center">
-                  {/* ChartPie Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-blue-500">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 3v8.25H3m8.25 0A8.25 8.25 0 1021 12a8.25 8.25 0 00-8.25-8.25z" />
-                  </svg>
-                </div>
-                <div className="font-bold text-gray-900 mb-1">Enterprise-Grade Analytics</div>
-                <div className="text-gray-600 text-sm">Custom reporting and dashboards</div>
               </div>
             </div>
           </div>
@@ -757,40 +767,8 @@ export default function Overview() {
 
       {/* Blog Section */}
       <BlogSection />
-
-
       {/* Full-Width Enterprise CTA Section */}
-      <section className="w-full bg-gradient-to-br from-teal-400 via-blue-400 to-purple-400 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50 rounded-3xl p-4 md:p-6 shadow-xl md:pb-4">
-            <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6">
-              {/* Left Side - Text Content */}
-              <div className="flex-1">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-1">
-                  Let AI Handle Your Customer Support
-                </h2>
-                <h5 className="text-lg md:text-xl font-normal text-gray-700 mb-0">
-                  Join 50+ enterprises that trust Caller.Digital for automation
-                </h5>
-              </div>
-
-              {/* Right Side - Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-start items-start mr-0 ml-0">
-                <button
-                  className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 hover:from-teal-500 hover:via-blue-600 hover:to-purple-600 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  Book a demo
-                </button>
-                <button
-                  className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 hover:from-teal-500 hover:via-blue-600 hover:to-purple-600 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  Talk to Experts
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EnterpriseCTA />
 
       
 

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { RiStarFill, RiDoubleQuotesL } from 'react-icons/ri';
 import Footer from '@/app/components/Footer';
+import EnterpriseCTA from '@/app/components/EnterpriseCTA';
 
 export default function Testimonials() {
   // Animation variants for sections
@@ -201,7 +202,179 @@ export default function Testimonials() {
         </div>
       </section>
 
+      <br / >
+      {/*Client section*/}
+
+     {/* Client Logos Section with Moving Ticker */}
+     <section className="w-full bg-white py-16 overflow-hidden ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Trusted by Industry Leaders</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Join hundreds of companies that trust Caller.Digital for their customer service automation
+            </p>
+          </div>
+          
+          {/* First Moving Row */}
+          <div className="relative mb-16">
+            <div className="flex animate-scroll-left">
+              {/* First set of clients */}
+              <div className="flex items-center" style={{ gap: '0' }}>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/express-logistics.png" alt="Express Logistics" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector (1).jpg" alt="Health Care" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/hyundai-motor-company-logo-png-transparent-0.png" alt="Hyundai Motor" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/Logistics-Express-para-FONDO-BLANCO-RGB.png" alt="Logistics Express" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/man-cross-health-care-logo-vector.jpg" alt="Health Care Services" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/pngimg.com - red_bull_PNG8.png" alt="Red Bull" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/unnamed.jpg" alt="Express Healthcare" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector.jpg" alt="Healthcare Solutions" className="max-h-16 max-w-full object-contain" />
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center" style={{ gap: '0' }}>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/express-logistics.png" alt="Express Logistics" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector (1).jpg" alt="Health Care" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/hyundai-motor-company-logo-png-transparent-0.png" alt="Hyundai Motor" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/Logistics-Express-para-FONDO-BLANCO-RGB.png" alt="Logistics Express" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/man-cross-health-care-logo-vector.jpg" alt="Health Care Services" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/pngimg.com - red_bull_PNG8.png" alt="Red Bull" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/unnamed.jpg" alt="Express Healthcare" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector.jpg" alt="Healthcare Solutions" className="max-h-16 max-w-full object-contain" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Second Moving Row (opposite direction) */}
+          <div className="relative">
+            <div className="flex animate-scroll-right">
+              {/* First set of clients */}
+              <div className="flex items-center" style={{ gap: '0' }}>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/hyundai-motor-company-logo-png-transparent-0.png" alt="Hyundai Motor" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/express-logistics.png" alt="Express Logistics" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector.jpg" alt="Healthcare Solutions" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/pngimg.com - red_bull_PNG8.png" alt="Red Bull" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/Logistics-Express-para-FONDO-BLANCO-RGB.png" alt="Logistics Express" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/man-cross-health-care-logo-vector.jpg" alt="Health Care Services" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector (1).jpg" alt="Health Care" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/unnamed.jpg" alt="Express Healthcare" className="max-h-16 max-w-full object-contain" />
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center" style={{ gap: '0' }}>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/hyundai-motor-company-logo-png-transparent-0.png" alt="Hyundai Motor" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/express-logistics.png" alt="Express Logistics" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector.jpg" alt="Healthcare Solutions" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/pngimg.com - red_bull_PNG8.png" alt="Red Bull" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/Logistics-Express-para-FONDO-BLANCO-RGB.png" alt="Logistics Express" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/man-cross-health-care-logo-vector.jpg" alt="Health Care Services" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector (1).jpg" alt="Health Care" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/unnamed.jpg" alt="Express Healthcare" className="max-h-16 max-w-full object-contain" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Custom CSS for animations */}
+        <style jsx>{`
+          @keyframes scroll-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          @keyframes scroll-right {
+            0% {
+              transform: translateX(-50%);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+          
+          .animate-scroll-left {
+            animation: scroll-left 45s linear infinite;
+          }
+          
+          .animate-scroll-right {
+            animation: scroll-right 45s linear infinite;
+          }
+          
+          .animate-scroll-left:hover,
+          .animate-scroll-right:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+      </section>
+            
       {/* Footer */}
+      <EnterpriseCTA />
       <Footer />
     </main>
   );

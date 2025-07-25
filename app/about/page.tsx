@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import CountUp from 'react-countup';
 import { FaGlobe, FaUsers, FaTachometerAlt, FaCheckCircle, FaLinkedin } from 'react-icons/fa';
+import EnterpriseCTA from '../components/EnterpriseCTA';
 
 export default function About() {
   const router = useRouter();
@@ -214,22 +215,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-600 mb-8">Contact us today to learn more about our services</p>
-            <motion.button 
-              onClick={handleContactClick}
-              className="relative overflow-hidden bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-lg hover:from-teal-500 hover:to-purple-600 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">Contact Us</span>
-            </motion.button>
-          </div>
-        </div>
-      </section>
+      <EnterpriseCTA />
     </main>
   );
 } 

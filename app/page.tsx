@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect, useRef } from 'react';
 import Footer from './components/Footer';
+import EnterpriseCTA from './components/EnterpriseCTA';
 
 export default function Home() {
 
@@ -96,7 +97,7 @@ export default function Home() {
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-gray-900 leading-tight">
-              Automate Conversations with India’s Most Advanced Voice <br />
+              Automate Conversations with Asia’s Most Advanced Voice <br />
               <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent mt-2 inline-block">AI Platform</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-12">
@@ -546,40 +547,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <div className="mb-6">
-              <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-teal-200 via-blue-200 to-purple-200 text-blue-700 text-sm font-medium mb-4 shadow-sm">
-                Ready to Transform Your Business?
-              </span>
-            </div>
-            
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-gray-900 leading-tight">
-              AI-Automated Customer Service
-              <br />
-              <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent mt-2 inline-block">
-                24/7 Assistance
-              </span>
-            </h3>
-            
-            <Link href="/contact">
-              <motion.button 
-                className="relative overflow-hidden bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-12 py-5 rounded-xl text-lg font-semibold shadow-xl hover:from-purple-500 hover:to-teal-400 hover:shadow-blue-300/60 hover:ring-4 hover:ring-blue-200/40 transition-all duration-300 focus:outline-none"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10">Experience Our Voice Bot</span>
-              </motion.button>
-            </Link>
-          </motion.div>  
-        </div>
-      </section>
+      <EnterpriseCTA />
 
       {/* Remove the hardcoded footer and use the Footer component */}
       

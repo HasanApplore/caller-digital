@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Footer from '@/app/components/Footer';
+import EnterpriseCTA from '@/app/components/EnterpriseCTA';
 
 const faqs = [
   {
@@ -179,6 +180,7 @@ export default function RealEstatePage() {
           </div>
         </section>
 
+        <EnterpriseCTA />
         <Footer />
       </main>
     </>
