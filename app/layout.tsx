@@ -92,6 +92,7 @@ export default function RootLayout({
         </SecurityProvider>
         <Analytics />
         {/* DevTools Detection Script - Site Wide */}
+        {/**
         <Script id="devtools-detect" strategy="afterInteractive">
           {`
             (function() {
@@ -109,6 +110,7 @@ export default function RootLayout({
             })();
           `}
         </Script>
+        */}
       </body>
     </html>
   );

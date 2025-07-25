@@ -360,23 +360,172 @@ export default function Overview() {
         </div>
       </section>
 
-      {/* Client Logos Section */}
-      <section className="w-full bg-white py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6">
-            <span className="uppercase text-xs text-gray-400 tracking-wider font-semibold">Trusted by</span>
+      {/* Client Logos Section with Moving Ticker */}
+      <section className="w-full bg-white py-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Trusted by Industry Leaders</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Join hundreds of companies that trust Caller.Digital for their customer service automation
+            </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6">
-            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=80&h=80&q=80" alt="Client 1" className="h-12 w-auto grayscale opacity-80 hover:opacity-100 transition rounded" />
-            <img src="https://images.unsplash.com/photo-1502767089025-6572583495b4?auto=format&fit=facearea&w=80&h=80&q=80" alt="Client 2" className="h-12 w-auto grayscale opacity-80 hover:opacity-100 transition rounded" />
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=80&h=80&q=80" alt="Client 3" className="h-12 w-auto grayscale opacity-80 hover:opacity-100 transition rounded" />
-            <img src="https://images.unsplash.com/photo-1519340333755-c8921d7a7e78?auto=format&fit=facearea&w=80&h=80&q=80" alt="Client 4" className="h-12 w-auto grayscale opacity-80 hover:opacity-100 transition rounded" />
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=80&h=80&q=80" alt="Client 5" className="h-12 w-auto grayscale opacity-80 hover:opacity-100 transition rounded" />
-            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=facearea&w=80&h=80&q=80" alt="Client 6" className="h-12 w-auto grayscale opacity-80 hover:opacity-100 transition rounded" />
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=80&h=80&q=80" alt="Client 7" className="h-12 w-auto grayscale opacity-80 hover:opacity-100 transition rounded" />
-            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&w=80&h=80&q=80" alt="Client 8" className="h-12 w-auto grayscale opacity-80 hover:opacity-100 transition rounded" />
+          
+          {/* First Moving Row */}
+          <div className="relative mb-16">
+            <div className="flex animate-scroll-left">
+              {/* First set of clients */}
+              <div className="flex items-center" style={{ gap: '0' }}>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/express-logistics.png" alt="Express Logistics" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector (1).jpg" alt="Health Care" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/hyundai-motor-company-logo-png-transparent-0.png" alt="Hyundai Motor" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/Logistics-Express-para-FONDO-BLANCO-RGB.png" alt="Logistics Express" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/man-cross-health-care-logo-vector.jpg" alt="Health Care Services" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/pngimg.com - red_bull_PNG8.png" alt="Red Bull" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/unnamed.jpg" alt="Express Healthcare" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector.jpg" alt="Healthcare Solutions" className="max-h-16 max-w-full object-contain" />
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center" style={{ gap: '0' }}>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/express-logistics.png" alt="Express Logistics" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector (1).jpg" alt="Health Care" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/hyundai-motor-company-logo-png-transparent-0.png" alt="Hyundai Motor" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/Logistics-Express-para-FONDO-BLANCO-RGB.png" alt="Logistics Express" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/man-cross-health-care-logo-vector.jpg" alt="Health Care Services" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/pngimg.com - red_bull_PNG8.png" alt="Red Bull" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/unnamed.jpg" alt="Express Healthcare" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector.jpg" alt="Healthcare Solutions" className="max-h-16 max-w-full object-contain" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Second Moving Row (opposite direction) */}
+          <div className="relative">
+            <div className="flex animate-scroll-right">
+              {/* First set of clients */}
+              <div className="flex items-center" style={{ gap: '0' }}>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/hyundai-motor-company-logo-png-transparent-0.png" alt="Hyundai Motor" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/express-logistics.png" alt="Express Logistics" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector.jpg" alt="Healthcare Solutions" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/pngimg.com - red_bull_PNG8.png" alt="Red Bull" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/Logistics-Express-para-FONDO-BLANCO-RGB.png" alt="Logistics Express" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/man-cross-health-care-logo-vector.jpg" alt="Health Care Services" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector (1).jpg" alt="Health Care" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/unnamed.jpg" alt="Express Healthcare" className="max-h-16 max-w-full object-contain" />
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center" style={{ gap: '0' }}>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/hyundai-motor-company-logo-png-transparent-0.png" alt="Hyundai Motor" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/express-logistics.png" alt="Express Logistics" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector.jpg" alt="Healthcare Solutions" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/pngimg.com - red_bull_PNG8.png" alt="Red Bull" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/Logistics-Express-para-FONDO-BLANCO-RGB.png" alt="Logistics Express" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/man-cross-health-care-logo-vector.jpg" alt="Health Care Services" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/health-care-logo-free-vector (1).jpg" alt="Health Care" className="max-h-16 max-w-full object-contain" />
+                </div>
+                <div className="w-40 h-20 flex items-center justify-center">
+                  <img src="/unnamed.jpg" alt="Express Healthcare" className="max-h-16 max-w-full object-contain" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* Custom CSS for animations */}
+        <style jsx>{`
+          @keyframes scroll-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          @keyframes scroll-right {
+            0% {
+              transform: translateX(-50%);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+          
+          .animate-scroll-left {
+            animation: scroll-left 45s linear infinite;
+          }
+          
+          .animate-scroll-right {
+            animation: scroll-right 45s linear infinite;
+          }
+          
+          .animate-scroll-left:hover,
+          .animate-scroll-right:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
       </section>
 
        {/* Leadership Team Section */}
@@ -611,30 +760,33 @@ export default function Overview() {
 
 
       {/* Full-Width Enterprise CTA Section */}
-      <section className="w-full bg-gradient-to-br from-teal-400 via-blue-400 to-purple-400 py-10">
+      <section className="w-full bg-gradient-to-br from-teal-400 via-blue-400 to-purple-400 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50 rounded-3xl p-8 md:p-12 shadow-xl">
-            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          <div className="bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50 rounded-3xl p-4 md:p-6 shadow-xl md:pb-4">
+            <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6">
               {/* Left Side - Text Content */}
-              <div className="flex-1 text-center lg:text-left">
-              
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 leading-tight">
-                Let AI Handle Your Customer Support
+              <div className="flex-1">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-1">
+                  Let AI Handle Your Customer Support
                 </h2>
-                <p className="text-sm md:text-base text-gray-600 mb-8">
-                Join 50+ enterprises that trust Caller.Digital for automation</p>
+                <h5 className="text-lg md:text-xl font-normal text-gray-700 mb-0">
+                  Join 50+ enterprises that trust Caller.Digital for automation
+                </h5>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-purple-500 hover:to-teal-400 hover:shadow-lg transition-all duration-300 shadow-md">
+              {/* Right Side - Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-start items-start mr-0 ml-0">
+                <button
+                  className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 hover:from-teal-500 hover:via-blue-600 hover:to-purple-600 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
                   Book a demo
                 </button>
-                <button className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-purple-500 hover:to-teal-400 hover:shadow-lg transition-all duration-300 shadow-md">
-                  Talk to Experts 
+                <button
+                  className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 hover:from-teal-500 hover:via-blue-600 hover:to-purple-600 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  Talk to Experts
                 </button>
               </div>
-
-            
             </div>
           </div>
         </div>

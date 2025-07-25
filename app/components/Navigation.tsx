@@ -16,7 +16,7 @@ const navLinks: NavLink[] = [];
 const aboutLinks = [
   { href: "/about/overview", label: "Overview" },
   { href: "/about/testimonials", label: "Testimonials" },
-  { href: "/about/case-studies", label: "Case Studies" },
+ 
 ];
 
 const solutionsByIndustry = [
@@ -71,8 +71,8 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center space-x-3">
-              <img src="/logo.jpeg" alt="Caller.Digital Logo" className="w-8 h-8" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">Caller.Digital</span>
+              <img src="/CallerDigitalLogo (2).svg" alt="Caller.Digital Logo" width={200}  height={150} />
+             
             </Link>
             <div className="hidden md:flex items-center space-x-6">
               {/* Simple nav links */}
@@ -110,7 +110,7 @@ export default function Navigation() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
+                        className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-m rounded-lg"
                       >
                         {link.label}
                       </Link>
@@ -156,7 +156,7 @@ export default function Navigation() {
                             <Link
                               key={link.href}
                               href={link.href}
-                              className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
+                              className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-m rounded-lg"
                             >
                               {link.label}
                             </Link>
@@ -172,7 +172,7 @@ export default function Navigation() {
                             <Link
                               key={link.href}
                               href={link.href}
-                              className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
+                              className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-m rounded-lg"
                             >
                               {link.label}
                             </Link>
@@ -209,7 +209,7 @@ export default function Navigation() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
+                        className="block px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-m rounded-lg"
                       >
                         {link.label}
                       </Link>
@@ -242,7 +242,7 @@ export default function Navigation() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="flex items-center justify-between px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-sm rounded-lg"
+                        className="flex items-center justify-between px-4 py-2.5 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all font-semibold text-m rounded-lg"
                       >
                         <span>{link.label}</span>
                         {link.badge && (

@@ -3,41 +3,8 @@
 import { motion } from 'framer-motion';
 import { RiStarFill, RiDoubleQuotesL } from 'react-icons/ri';
 import Footer from '@/app/components/Footer';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 export default function Testimonials() {
-  // Settings for the testimonials slider
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    arrows: false,
-    cssEase: "cubic-bezier(0.87, 0, 0.13, 1)",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  };
-
   // Animation variants for sections
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -56,73 +23,69 @@ export default function Testimonials() {
   // Testimonial data
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Customer Service Director",
-      company: "TechCorp Solutions",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
-      content: "Caller.Digital has revolutionized our customer service operations. The AI voice solutions have reduced our response time by 60% while maintaining high customer satisfaction levels.",
+      name: 'Michael Lacefield',
+      role: 'Co-founder, XYZ',
+      avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+      quote: 'Caller.Digital transformed our customer support operations. The AI voice bots are incredibly natural and our customer satisfaction scores have improved dramatically.',
       rating: 5
     },
     {
-      name: "Michael Chen",
-      role: "Operations Manager",
-      company: "Global Retail Inc.",
-      image: "https://randomuser.me/api/portraits/men/2.jpg",
-      content: "The multilingual capabilities of Caller.Digital's platform have allowed us to expand into new markets with confidence. Our customer engagement has improved significantly.",
+      name: 'Harry Callum',
+      role: 'Manager',
+      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+      quote: 'The automation capabilities are game-changing. We have scaled our support without increasing headcount, and the quality has never been better.',
       rating: 5
     },
     {
-      name: "Emily Rodriguez",
-      role: "Head of Customer Experience",
-      company: "FinServ Group",
-      image: "https://randomuser.me/api/portraits/women/3.jpg",
-      content: "Implementation was seamless, and the results were immediate. We've seen a 40% increase in customer satisfaction scores since partnering with Caller.Digital.",
-      rating: 5
+      name: 'Mason Robert',
+      role: 'Co-founder, XYZ',
+      avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
+      quote: 'Implementation was seamless and the results were immediate. Our team loves the new system and our customers appreciate the 24/7 availability.',
+      rating: 4
     },
-    {
-      name: "David Kim",
-      role: "IT Director",
-      company: "Healthcare Solutions",
-      image: "https://randomuser.me/api/portraits/men/4.jpg",
-      content: "The scalability and reliability of the platform are outstanding. We handle thousands of patient inquiries daily without any hiccups.",
-      rating: 5
-    },
-    {
-      name: "Lisa Thompson",
-      role: "VP of Operations",
-      company: "Retail Chain Corp",
-      image: "https://randomuser.me/api/portraits/women/5.jpg",
-      content: "Caller.Digital's AI voice solutions have transformed how we handle customer support. The automation has saved us countless hours while improving service quality.",
-      rating: 5
-    }
-  ];
+      {
+        name: 'Amelia Margaret',
+        role: 'Manager',
+        avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
+        content: "The multilingual support helped us expand into new markets effortlessly. Caller.Digital is a true partner in our growth journey. We saw increased engagement and improved communication efficiency across geographies.",
+        rating: 5,
+      },
+      {
+        name: 'Sophia Jennifer',
+        role: 'Co-founder, XYZ',
+        avatar: 'https://randomuser.me/api/portraits/women/22.jpg',
+        content: 'Outstanding platform with excellent support. The analytics and reporting features give us insights we never had before. Caller.Digital’s ability to integrate with our tech stack made adoption seamless.',
+        rating: 5,
+      },
+      {
+        name: 'Daniel Thomas',
+        role: 'Manager',
+        avatar: 'https://randomuser.me/api/portraits/men/51.jpg',
+        content: 'Reliable, scalable, and cost-effective. Caller.Digital has exceeded our expectations in every way possible. Our support operations have become leaner while handling more requests.',
+        rating: 5,
+      },
+      {
+        name: 'Natalie Carter',
+        role: 'VP Operations',
+        avatar: 'https://randomuser.me/api/portraits/women/39.jpg',
+        content: 'Our automation journey was accelerated thanks to Caller.Digital\'s voice AI. 10/10 experience. The voice accuracy, natural tone, and integration with our CRM saved hours weekly.',
+        rating: 5,
+      },
+      {
+        name: 'Jacob Harris',
+        role: 'CTO, InnovateX',
+        avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
+        content: 'The API-first approach and scalability of Caller.Digital made it a no-brainer for our enterprise stack. Their team collaborated closely with us during onboarding and rollout.',
+        rating: 5,
+      },
+      {
+        name: 'Ella Martinez',
+        role: 'Customer Experience Head',
+        avatar: 'https://randomuser.me/api/portraits/women/12.jpg',
+        content: 'Everything just works — from voice quality to CRM integrations. Caller.Digital nailed it. Our team noticed a drop in manual queries and a smoother customer resolution rate.',
+        rating: 5,
+      },
 
-  // Client logos data
-  const clientLogos = [
-    {
-      name: "Microsoft",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
-    },
-    {
-      name: "Google Cloud",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/6/61/Google_Cloud_Logo.svg"
-    },
-    {
-      name: "Amazon Web Services",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-    },
-    {
-      name: "Salesforce",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
-    },
-    {
-      name: "Adobe",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Corporate_Logo.svg"
-    },
-    {
-      name: "IBM",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
-    }
   ];
 
   return (
@@ -160,7 +123,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Discover how businesses are transforming their customer service with our AI-powered solutions
+              Real experiences from businesses that have transformed their customer service with Caller.Digital
             </motion.p>
           </motion.div>
         </div>
@@ -178,189 +141,65 @@ export default function Testimonials() {
         </motion.div>
       </section>
 
-      {/* Testimonials Section with enhanced cards */}
+      {/* Testimonials Section with 3x3 Grid */}
       <section className="py-16 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            {...fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real experiences from businesses that have transformed their customer service with Caller.Digital
-            </p>
-          </motion.div>
-
-          <div className="testimonials-slider">
-            <Slider {...sliderSettings}>
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="px-4 py-2"
-                >
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-[420px] hover:shadow-xl transition-all duration-300 flex flex-col transform hover:-translate-y-1 hover:scale-[1.02] relative overflow-hidden group">
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    <div className="relative z-10">
-                      <div className="flex items-center mb-6">
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 rounded-full animate-pulse" style={{ padding: '2px' }}>
-                            <div className="w-full h-full bg-white rounded-full" />
-                          </div>
-                          <img
-                            src={testimonial.image}
-                            alt={testimonial.name}
-                            className="w-16 h-16 rounded-full object-cover relative z-10"
-                          />
-                        </div>
-                        <div className="ml-4">
-                          <h3 className="text-lg font-bold text-gray-900 line-clamp-1">{testimonial.name}</h3>
-                          <p className="text-violet-500 text-sm line-clamp-1">{testimonial.role}</p>
-                          <p className="text-gray-500 text-sm line-clamp-1">{testimonial.company}</p>
-                        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-[420px] hover:shadow-xl transition-all duration-300 flex flex-col transform hover:-translate-y-1 hover:scale-[1.02] relative overflow-hidden group"
+              >
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Header with avatar and name */}
+                  <div className="flex items-center mb-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 rounded-full animate-pulse" style={{ padding: '2px' }}>
+                        <div className="w-full h-full bg-white rounded-full" />
                       </div>
-                      <div className="flex-grow">
-                        <RiDoubleQuotesL className="text-4xl text-violet-200 mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                        <p className="text-gray-600 leading-relaxed line-clamp-6">{testimonial.content}</p>
-                      </div>
-                      <div className="flex items-center pt-4 mt-auto">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: i * 0.1, duration: 0.3 }}
-                          >
-                            <RiStarFill className="text-yellow-400 w-5 h-5" />
-                          </motion.div>
-                        ))}
-                      </div>
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        className="w-16 h-16 rounded-full object-cover relative z-10"
+                      />
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-lg font-bold text-gray-900">{testimonial.name}</h3>
+                      <p className="text-violet-500 text-sm">{testimonial.role}</p>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </Slider>
-          </div>
-        </div>
-      </section>
 
-      {/* Client Logos Section */}
-      <section className="py-16 bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Our Trusted Partners</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Working with industry leaders to deliver exceptional customer experiences
-            </p>
-          </motion.div>
+                  {/* Quote content */}
+                  <div className="flex-grow">
+                    <RiDoubleQuotesL className="text-4xl text-violet-200 mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+                    <p className="text-gray-600 leading-relaxed line-clamp-6">"{testimonial.content || testimonial.quote}"</p>
+                  </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {clientLogos.map((client, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center justify-center"
-              >
-                <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 w-full h-32 flex items-center justify-center group">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="max-w-[120px] max-h-[60px] object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                  />
+                  {/* Star rating */}
+                  <div className="flex items-center pt-4 mt-auto">
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: i * 0.1, duration: 0.3 }}
+                      >
+                        <RiStarFill className={`w-5 h-5 ${i < Math.floor(testimonial.rating) ? 'text-yellow-400' : i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`} />
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Stats Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                stat: "98%",
-                label: "Client Satisfaction",
-                description: "Average satisfaction rate across all clients"
-              },
-              {
-                stat: "500+",
-                label: "Active Clients",
-                description: "Trusted by businesses worldwide"
-              },
-              {
-                stat: "24/7",
-                label: "Support Coverage",
-                description: "Round-the-clock automated assistance"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all duration-300"
-              >
-                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mb-4">
-                  {item.stat}
-                </div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">{item.label}</div>
-                <p className="text-gray-600">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced custom styles for Slick slider */}
-      <style jsx global>{`
-        .slick-dots {
-          bottom: -40px;
-        }
-        .slick-dots li button:before {
-          color: #8b5cf6;
-          opacity: 0.25;
-          font-size: 8px;
-          transition: all 0.3s ease;
-        }
-        .slick-dots li.slick-active button:before {
-          color: #8b5cf6;
-          opacity: 1;
-          transform: scale(1.5);
-        }
-        .testimonials-slider .slick-slide {
-          padding: 1rem;
-          height: auto;
-          opacity: 0.5;
-          transition: all 0.5s ease;
-        }
-        .testimonials-slider .slick-slide.slick-active {
-          opacity: 1;
-        }
-        .testimonials-slider .slick-track {
-          display: flex !important;
-        }
-        .testimonials-slider .slick-slide > div {
-          height: 100%;
-        }
-        @keyframes gradient-shift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-      `}</style>
 
       {/* Footer */}
       <Footer />

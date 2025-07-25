@@ -12,19 +12,14 @@ export default function Footer() {
       name: 'Instagram',
       url: 'https://www.instagram.com/caller.digital?igsh=cHYxaWI0Z3k1cGh3&utm_source=qr',
       icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21h9c2.485 0 4.5-2.015 4.5-4.5v-9C21 5.015 18.985 3 16.5 3h-9C5.015 3 3 5.015 3 7.5v9C3 18.985 5.015 21 7.5 21z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M16.125 7.875a.375.375 0 11-.75 0 .375.375 0 01.75 0zM12 16.125a4.125 4.125 0 100-8.25 4.125 4.125 0 000 8.25z" />
-        </svg>
+        <Image src="/social.svg" alt="Instagram" width={20} height={20} className="w-5 h-5 transition-colors duration-200 hover:text-purple-600" />
       ),
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/company/caller-digital/',
       icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 9v9M8 6.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15.5 13.5v4.5M15.5 13.5c0-1.5 1-3 2.5-3s2.5 1.5 2.5 3v4.5M15.5 13.5V9" />
-        </svg>
+        <Image src="/video.svg" alt="LinkedIn" width={20} height={20} className="w-5 h-5 transition-colors duration-200 hover:text-purple-600" />
       ),
     },
   ];
@@ -47,16 +42,12 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <Image 
-                  src="/logo.jpeg" 
+                  src="/CallerDigitalLogo (2).svg" 
                   alt="Caller Digital Logo" 
-                  width={36} 
-                  height={36} 
-                  className="rounded-lg shadow-sm" 
+                  width={200} 
+                  height={150} 
                 />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-                Caller Digital
-              </span>
             </div>
             
             <p className="text-gray-600 text-sm leading-5">
@@ -183,7 +174,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <p className="text-sm text-gray-500">
-              © 2025 Caller Digital. All rights reserved.
+             Copyright © 2025 Caller Digital. All rights reserved.
             </p>
             <div className="flex items-center space-x-4">
               <Link href="#" className="text-sm text-gray-500 hover:text-gray-700 hover:underline transition-colors duration-200 underline-offset-2">
