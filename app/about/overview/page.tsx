@@ -43,6 +43,42 @@ function BlogSection() {
       title: 'Data-Driven Insights for Better CX',
       excerpt: 'See how real-time analytics and reporting help businesses optimize every customer interaction.',
       body: 'Data-driven insights allow companies to identify pain points, track performance, and continuously improve customer experience. Real-time analytics are essential for modern support operations.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=facearea&w=400&h=250&q=80',
+      title: 'The Future of Customer Support',
+      excerpt: 'Explore emerging trends and technologies that will shape the future of customer service automation.',
+      body: 'The future of customer support lies in intelligent automation, predictive analytics, and seamless omnichannel experiences. AI will continue to evolve, providing more personalized and efficient customer interactions.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=facearea&w=400&h=250&q=80',
+      title: 'Multilingual AI: Breaking Language Barriers',
+      excerpt: 'How AI technology is helping businesses serve customers in their preferred languages worldwide.',
+      body: 'Multilingual AI is breaking down language barriers in customer service. Businesses can now serve global customers in their native languages, improving satisfaction and expanding market reach.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=facearea&w=400&h=250&q=80',
+      title: 'Building Trust with AI-Powered Support',
+      excerpt: 'Strategies for building customer trust and confidence through intelligent automation solutions.',
+      body: 'Building trust with AI-powered support requires transparency, reliability, and human oversight. When implemented correctly, AI can enhance customer confidence and loyalty.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=facearea&w=400&h=250&q=80',
+      title: 'ROI of Customer Service Automation',
+      excerpt: 'Understanding the return on investment and cost savings from implementing AI customer service solutions.',
+      body: 'Customer service automation delivers significant ROI through reduced operational costs, improved efficiency, and enhanced customer satisfaction. The investment pays off quickly.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=facearea&w=400&h=250&q=80',
+      title: 'Security in AI Customer Service',
+      excerpt: 'Best practices for ensuring data security and privacy in AI-powered customer service platforms.',
+      body: 'Security is paramount in AI customer service. Implementing robust encryption, compliance measures, and privacy protection ensures customer data remains safe and secure.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=facearea&w=400&h=250&q=80',
+      title: 'Integration Strategies for Modern Businesses',
+      excerpt: 'How to seamlessly integrate AI customer service with existing business systems and workflows.',
+      body: 'Successful AI integration requires careful planning, API compatibility, and change management. The right strategy ensures smooth implementation and maximum benefits.'
     }
   ];
 
@@ -51,23 +87,45 @@ function BlogSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Latest from Our Blog</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Stay updated with the latest insights on AI, customer service, and industry trends
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {blogs.map((blog, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col cursor-pointer hover:shadow-xl transition-all duration-300"
-              onClick={() => { setActiveBlog(blog); setModalOpen(true); }}
-            >
-              <img src={blog.image} alt={blog.title} className="w-full h-40 object-cover" />
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="font-bold text-lg text-gray-900 mb-2">{blog.title}</h3>
-                <p className="text-gray-600 text-sm mb-4 flex-1">{blog.excerpt}</p>
-                <span className="text-blue-500 font-medium mt-auto">Read More</span>
+        
+        <div className="relative">
+          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide" id="blog-scroll-overview">
+            {blogs.map((blog, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex-shrink-0 w-80 cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => { setActiveBlog(blog); setModalOpen(true); }}
+              >
+                <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover" />
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{blog.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4 flex-1 line-clamp-3">{blog.excerpt}</p>
+                  <span className="text-blue-500 font-medium mt-auto">Read More</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          {/* Scroll Button */}
+          <button 
+            onClick={() => {
+              const scrollContainer = document.getElementById('blog-scroll-overview');
+              if (scrollContainer) {
+                scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+              }
+            }}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
+          >
+            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
+        
         {/* Modal */}
         {modalOpen && activeBlog && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
@@ -86,6 +144,29 @@ function BlogSection() {
           </div>
         )}
       </div>
+      
+      {/* Custom CSS for scrollbar hiding */}
+      <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
     </section>
   );
 }

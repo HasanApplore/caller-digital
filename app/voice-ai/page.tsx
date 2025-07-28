@@ -20,7 +20,7 @@ export default function DemoPage() {
 
   useEffect(() => {
     // Initialize Vapi with your public key
-    vapiRef.current = new Vapi(process.env.NEXT_PUBLIC_VAPI_KEY || "");
+    vapiRef.current = new Vapi("cd8a3fd6-6a91-42a7-9ab0-eb4711fa7811");
 
     // Set up event listeners
     vapiRef.current.on('call-start', () => {
@@ -119,7 +119,7 @@ export default function DemoPage() {
       // Ensure Vapi is initialized
       if (!vapiRef.current) {
         console.log('Initializing Vapi...');
-        vapiRef.current = new Vapi(process.env.NEXT_PUBLIC_VAPI_KEY || "");
+        vapiRef.current = new Vapi("cd8a3fd6-6a91-42a7-9ab0-eb4711fa7811");
         
         // Re-setup event listeners
         vapiRef.current.on('call-start', () => {
