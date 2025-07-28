@@ -435,12 +435,6 @@ export default function Home() {
                 link: "https://www.caller.digital/industry/education-edtech"
               },
               {
-                icon: <RiBriefcase4Fill className="w-8 h-8 text-white" />,
-                title: "Manufacturing & Industrial",
-                description: "Smart automation for industrial operations and support.",
-                link: "/manufacturing"
-              },
-              {
                 icon: <RiHomeSmileFill className="w-8 h-8 text-white" />,
                 title: "Real Estate",
                 description: "AI-powered property management and client support.",
@@ -453,18 +447,6 @@ export default function Home() {
                 link: "https://www.caller.digital/industries/healthcare"
               },
               {
-                icon: <RiCustomerService2Fill className="w-8 h-8 text-white" />,
-                title: "Hospitality",
-                description: "Enhanced guest services with AI booking assistance.",
-                link: "https://www.caller.digital/industry/hospitality"
-              },
-              {
-                icon: <RiCarFill className="w-8 h-8 text-white" />,
-                title: "Automobile",
-                description: "Streamlined dealership operations and customer support.",
-                link: "/automobile"
-              },
-              {
                 icon: <RiShieldCheckFill className="w-8 h-8 text-white" />,
                 title: "Insurance",
                 description: "Automated claims processing and policy support.",
@@ -475,6 +457,24 @@ export default function Home() {
                 title: "Travel & Tourism",
                 description: "24/7 travel assistance and booking automation.",
                 link: "https://www.caller.digital/industry/travel-and-tourism"
+              },
+              {
+                icon: <RiCustomerService2Fill className="w-8 h-8 text-white" />,
+                title: "Hospitality",
+                description: "Enhanced guest services with AI booking assistance.",
+                link: "https://www.caller.digital/industry/hospitality"
+              },
+              {
+                icon: <RiApps2Fill className="w-8 h-8 text-white" />,
+                title: "Telecom",
+                description: "AI-powered customer support and network management solutions.",
+                link: "https://www.caller.digital/industry/telecom"
+              },
+              {
+                icon: <RiCarFill className="w-8 h-8 text-white" />,
+                title: "Logistics & Delivery",
+                description: "Automated delivery tracking and customer service solutions.",
+                link: "https://www.caller.digital/industries/logistics-and-delivery"
               }
             ].map((industry, index) => (
               <motion.div

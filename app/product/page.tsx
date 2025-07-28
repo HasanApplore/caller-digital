@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { RiVoiceprintFill, RiCustomerService2Fill, RiBarChartBoxFill, RiGlobalFill, RiRobot2Fill, RiHeadphoneFill, RiDashboardFill, RiPieChartFill } from 'react-icons/ri';
 import Footer from '@/app/components/Footer';
 import EnterpriseCTA from '@/app/components/EnterpriseCTA';
@@ -104,48 +105,105 @@ export default function Product() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
       {/* Hero Section */}
-      <section className="relative py-10 overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/ezgif.com-gif-maker-3-2-768x352.jpg" 
+            alt="AI Voice Technology Digital Illustration" 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-2 mt-8"
-          >
-            <motion.div
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[600px]">
+            <div className="lg:col-span-1">
+            {/* Left Section - Text Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
             >
-              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 leading-tight">
-                AI-Powered Voice Solutions for
-                <br />
-                <motion.span 
-                  className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent inline-block"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                >
-                  Modern Customer Service
-                </motion.span>
-              </h1>
+                             <motion.div
+                 initial={{ scale: 0.95 }}
+                 animate={{ scale: 1 }}
+                 transition={{ duration: 0.5 }}
+               >
+                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
+                   AI-Powered Voice Automation
+                   <br />
+                   <motion.span 
+                     className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent inline-block"
+                     initial={{ opacity: 0 }}
+                     animate={{ opacity: 1 }}
+                     transition={{ delay: 0.3, duration: 0.5 }}
+                   >
+                     Platform Built for Scale
+                   </motion.span>
+                 </h1>
+               </motion.div>
+               <motion.p 
+                 className="text-lg md:text-xl text-gray-200 mb-4 leading-relaxed"
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.4, duration: 0.6 }}
+               >
+                 Caller Digital empowers businesses with intelligent voice bots that automate customer interactions across channels. Automate support, boost efficiency, and scale effortlessly with our multilingual voice AI platform — trusted by leading industries, with no hidden costs and full scalability.
+               </motion.p>
+               
+               {/* Breadcrumb */}
+               <motion.div 
+                 className="text-sm text-gray-300 mb-8"
+                 initial={{ opacity: 0, y: 10 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.5, duration: 0.5 }}
+               >
+                 <Link href="/" className="hover:text-purple-400 transition-colors duration-200">
+                   Home
+                 </Link>
+                 {' > '} Product
+               </motion.div>
+               
+               {/* Call to Action Buttons */}
+               <motion.div 
+                 className="flex flex-col sm:flex-row gap-4"
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.6, duration: 0.6 }}
+               >
+                 <motion.button 
+                   className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 hover:from-purple-500 hover:to-teal-400 hover:shadow-xl hover:scale-105"
+                   whileHover={{ scale: 1.05 }}
+                   whileTap={{ scale: 0.95 }}
+                   onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
+                 >
+                   Book a Demo
+                 </motion.button>
+                 <motion.button 
+                   className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:border-purple-400 hover:text-purple-400 hover:scale-105"
+                   whileHover={{ scale: 1.05 }}
+                   whileTap={{ scale: 0.95 }}
+                   onClick={() => {
+                     // Add modal or video functionality here
+                     console.log('Talk to Experts clicked');
+                   }}
+                 >
+                   Talk to Experts
+                 </motion.button>
+               </motion.div>
             </motion.div>
-            <motion.p 
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-0"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              Transform your customer experience with intelligent voice AI that understands, responds, and learns
-            </motion.p>
-          </motion.div>
+            </div>
+          </div>
         </div>
 
-        {/* Animated background elements */}
+        {/* Subtle background elements */}
         <motion.div 
-          className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+          className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
+          animate={{ opacity: 0.05 }}
           transition={{ duration: 1 }}
         >
           <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-xl" />
