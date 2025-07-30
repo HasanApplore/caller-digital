@@ -158,31 +158,9 @@ export default function Product() {
                  animate={{ scale: 1 }}
                  transition={{ duration: 0.5 }}
                >
-                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
-                   AI-Powered Voice Automation
-                   <br />
-                   <motion.span 
-                     className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent inline-block"
-                     initial={{ opacity: 0 }}
-                     animate={{ opacity: 1 }}
-                     transition={{ delay: 0.3, duration: 0.5 }}
-                   >
-                     Platform Built for Scale
-                   </motion.span>
-                 </h1>
-               </motion.div>
-               <motion.p 
-                 className="text-lg md:text-xl text-gray-200 mb-4 leading-relaxed"
-                 initial={{ opacity: 0, y: 20 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 transition={{ delay: 0.4, duration: 0.6 }}
-               >
-                 Caller Digital empowers businesses with intelligent voice bots that automate customer interactions across channels. Automate support, boost efficiency, and scale effortlessly with our multilingual voice AI platform — trusted by leading industries, with no hidden costs and full scalability.
-               </motion.p>
-               
-               {/* Breadcrumb */}
+                 {/* Breadcrumb */}
                <motion.div 
-                 className="text-sm text-gray-300 mb-8"
+                 className="text-xs text-gray-300 mb-6"
                  initial={{ opacity: 0, y: 10 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ delay: 0.5, duration: 0.5 }}
@@ -192,16 +170,39 @@ export default function Product() {
                  </Link>
                  {' > '} Product
                </motion.div>
+                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-white leading-tight">
+                   AI-Powered Voice Automation Platform
+                   <br />
+                   <motion.span 
+                     className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent inline-block"
+                     initial={{ opacity: 0 }}
+                     animate={{ opacity: 1 }}
+                     transition={{ delay: 0.3, duration: 0.5 }}
+                   >
+                     Built for Scale
+                   </motion.span>
+                 </h1>
+               </motion.div>
+               <motion.p 
+                 className="text-base md:text-lg text-gray-200 mb-3 leading-relaxed"
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.4, duration: 0.6 }}
+               >
+                 Caller Digital empowers businesses with intelligent voice bots that automate customer interactions across channels. Automate support, boost efficiency, and scale effortlessly with our multilingual voice AI platform — trusted by leading industries, with no hidden costs and full scalability.
+               </motion.p>
+               
+              
                
                {/* Call to Action Buttons */}
                <motion.div 
-                 className="flex flex-col sm:flex-row gap-4"
+                 className="flex flex-col sm:flex-row gap-3"
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ delay: 0.6, duration: 0.6 }}
                >
                  <motion.button 
-                   className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 hover:from-purple-500 hover:to-teal-400 hover:shadow-xl hover:scale-105"
+                   className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl text-base font-semibold shadow-lg transition-all duration-300 hover:from-purple-500 hover:to-teal-400 hover:shadow-xl hover:scale-105"
                    whileHover={{ scale: 1.05 }}
                    whileTap={{ scale: 0.95 }}
                    onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
@@ -209,7 +210,7 @@ export default function Product() {
                    Book a Demo
                  </motion.button>
                  <motion.button 
-                   className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:border-purple-400 hover:text-purple-400 hover:scale-105"
+                   className="border-2 border-white text-white px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:border-purple-400 hover:text-purple-400 hover:scale-105"
                    whileHover={{ scale: 1.05 }}
                    whileTap={{ scale: 0.95 }}
                    onClick={() => {
@@ -236,6 +237,8 @@ export default function Product() {
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full blur-xl" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-teal-400 to-purple-400 rounded-full blur-2xl" />
         </motion.div>
+        
+            
       </section>
 
           {/* What is Caller Digital? */}
@@ -247,13 +250,13 @@ export default function Product() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
               What is{' '}
               <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Caller Digital?
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Revolutionizing customer experience through intelligent voice AI and automation
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-8"></div>
@@ -298,7 +301,7 @@ export default function Product() {
                     </div>
                     <h3 className="text-xl font-bold text-gray-900">Core Purpose</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     <span className="font-semibold text-gray-900">Caller Digital</span> is an AI-powered voice automation platform that streamlines customer interactions across voice, chat, WhatsApp, and email. With multilingual support and human-like TTS, it enables 24/7 support and intelligent escalation.
                   </p>
                 </motion.div>
@@ -315,7 +318,7 @@ export default function Product() {
                     </div>
                     <h3 className="text-xl font-bold text-gray-900">Problem Solver</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     Traditional customer service struggles with high costs and slow response times. Caller Digital solves this by automating voice workflows, reducing agent load, and improving customer satisfaction using AI-driven voice bots.
                   </p>
                 </motion.div>
@@ -354,11 +357,11 @@ export default function Product() {
                       className="flex items-start text-gray-700 group"
                     >
                       <div className="w-3 h-3 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform duration-300"></div>
-                      <span className="text-base font-medium">{feature}</span>
+                      <span className="text-sm font-medium">{feature}</span>
                     </motion.li>
                   ))}
                 </ul>
-              </div>
+          </div>
             </motion.div>
           </div>
 
@@ -375,11 +378,106 @@ export default function Product() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900">Trusted by Industry Leaders</h3>
             </div>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <p className="text-gray-700 leading-relaxed text-base">
               <span className="font-semibold text-gray-900">Caller Digital</span> is trusted by businesses in real estate, BFSI, healthcare, retail, and more — helping them automate lead qualification, customer support, feedback collection, and payment reminders at scale.
             </p>
+             {/* Client Logos Section */}
+         <div className="mt-16">        
+           
+           <div className="relative overflow-hidden">
+             <div className="flex animate-scroll-left">
+               {/* First set of clients */}
+               <div className="flex items-center gap-16 min-w-max">
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/untitled-1_160.png" alt="KALYAN JEWELLERS" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/talent carriage.jpg" alt="Talent Carriage" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/INDIAMART.NS_BIG-467a563d.png" alt="Indiamart" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/circlepe_logo.jpg" alt="CircleP" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/dehaat.png" alt="DeHaat Seeds to Market" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/jk_tyres.jpeg" alt="JK TYRE" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/logo-300x70.png" alt="Indorewala ENT Hospital" className="max-h-12 max-w-full object-contain" />
+          </div>
+          </div>
+               
+               {/* Duplicate set for seamless loop */}
+               <div className="flex items-center gap-16 min-w-max">
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/untitled-1_160.png" alt="KALYAN JEWELLERS" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/talent carriage.jpg" alt="Talent Carriage" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/INDIAMART.NS_BIG-467a563d.png" alt="Indiamart" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/circlepe_logo.jpg" alt="CircleP" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/dehaat.png" alt="DeHaat Seeds to Market" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/jk_tyres.jpeg" alt="JK TYRE" className="max-h-12 max-w-full object-contain" />
+                 </div>
+                 <div className="w-32 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                   <img src="/logo-300x70.png" alt="Indorewala ENT Hospital" className="max-h-12 max-w-full object-contain" />
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
           </motion.div>
+
         </div>
+
+        
+         {/* Custom CSS for animations */}
+        <style jsx>{`
+          @keyframes scroll-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          @keyframes scroll-right {
+            0% {
+              transform: translateX(-50%);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+          
+          .animate-scroll-left {
+            animation: scroll-left 30s linear infinite;
+          }
+          
+          .animate-scroll-right {
+            animation: scroll-right 30s linear infinite;
+          }
+          
+          .animate-scroll-left:hover,
+          .animate-scroll-right:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+
       </section>
 
            {/* Caller Digital in Action Section */}
@@ -392,13 +490,13 @@ export default function Product() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
               Caller Digital in Action:{' '}
               <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 AI Voice Platform Highlights
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               Discover how our AI voice platform empowers businesses to automate, scale, and optimize customer service experiences.
             </p>
             <div className="w-24 h-1 bg-gradient-to-r  from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-6"></div>
@@ -412,13 +510,13 @@ export default function Product() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6"
             >
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-700 leading-relaxed">
                 Caller Digital delivers intelligent voice automation that empowers businesses to scale support, reduce operational costs, and enhance customer engagement — without increasing headcount.
               </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-700 leading-relaxed">
                 Built to handle over <strong>200K+ minutes/month</strong>, the platform combines powerful voice AI, real-time analytics, and multi-language support.
               </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-700 leading-relaxed">
                 Whether for lead qualification, customer surveys, or support tickets — every voice interaction is fast, smart, and measurable.
               </p>
             </motion.div>
@@ -479,7 +577,7 @@ export default function Product() {
                       <h3 className="text-lg font-semibold text-gray-900">
                         {highlight.title}
                       </h3>
-                      <p className="text-gray-600 text-sm">{highlight.subtitle}</p>
+                      <p className="text-gray-600 text-xs">{highlight.subtitle}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -496,51 +594,36 @@ export default function Product() {
             {...fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="text-4xl mt-12 font-bold mb-6 text-gray-900">
               Core Features That{' '}
               <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Power Conversations
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
               From smart routing to human-like speech, Caller Digital brings together powerful technologies to automate customer communication intelligently. Here's what drives it:
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-8"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.slice(0, 6).map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="flex items-center mb-6">
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-purple-400/10 group-hover:from-teal-400/20 group-hover:via-blue-400/20 group-hover:to-purple-400/20 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="p-2 rounded-lg bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-purple-400/10 group-hover:from-teal-400/20 group-hover:via-blue-400/20 group-hover:to-purple-400/20 transition-all duration-300">
                     <div className="text-violet-500 group-hover:scale-110 transition-transform duration-300">
                       {feature.icon}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 ml-4">{feature.title}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 ml-3">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 mb-6">{feature.description}</p>
-                <ul className="space-y-3">
-                  {feature.highlights.map((highlight, i) => (
-                    <li key={i} className="flex items-center text-gray-600">
-                      <motion.div
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.1 }}
-                        className="mr-2 text-violet-500"
-                      >
-                        •
-                      </motion.div>
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -556,13 +639,13 @@ export default function Product() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
               Smarter Decisions with{' '}
               <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Real-Time Analytics
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Gain full visibility into every customer conversation with Caller Digital's advanced analytics suite. From live call tracking to sentiment analysis, our real-time dashboard helps you make smarter, faster decisions backed by actionable insights.
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-8"></div>
@@ -636,32 +719,32 @@ export default function Product() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                className="relative bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl hover:scale-102 transition-all duration-300 group overflow-hidden"
               >
-                <div className="flex items-center mb-6">
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-purple-400/10 group-hover:from-teal-400/20 group-hover:via-blue-400/20 group-hover:to-purple-400/20 transition-all duration-300">
-                    <div className="text-violet-500 group-hover:scale-110 transition-transform duration-300">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/40 via-purple-50/20 to-purple-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Icon with Gradient Background */}
+                <div className="relative z-10 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div className="text-white text-lg group-hover:scale-110 transition-transform duration-300">
                       {feature.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 ml-4">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
-                <ul className="space-y-3">
-                  {feature.highlights.map((highlight, i) => (
-                    <li key={i} className="flex items-center text-gray-600">
-                      <motion.div
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.1 }}
-                        className="mr-2 text-violet-500"
-                      >
-                        •
-                      </motion.div>
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {feature.description}
+                  </p>
+                </div>
+                
+                {/* Bottom Accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </motion.div>
             ))}
           </div>
@@ -677,13 +760,13 @@ export default function Product() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
               What Our{' '}
               <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Clients Say
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Trusted by leading enterprises across industries
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-8"></div>
@@ -730,7 +813,7 @@ export default function Product() {
                 </div>
                 
                 {/* Quote */}
-                <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                <p className="text-gray-700 text-xs leading-relaxed mb-6">
                   "{testimonial.quote}"
                 </p>
                 
@@ -761,13 +844,13 @@ export default function Product() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
               Enterprise-Grade{' '}
               <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Security & Compliance
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Caller Digital is built with enterprise-grade security protocols to protect your data, ensure privacy, and maintain full compliance with industry standards. From encryption to certifications, we ensure your conversations are always safe and compliant.
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-8"></div>
@@ -912,8 +995,8 @@ export default function Product() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">Everything you need to know about our AI voice automation platform</p>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
+            <p className="text-base text-gray-600">Everything you need to know about our AI voice automation platform</p>
           </motion.div>
 
           <div className="space-y-6">
@@ -967,7 +1050,7 @@ export default function Product() {
                   className={`overflow-hidden transition-all duration-300 ${openFaq === index ? 'max-h-40 mt-4' : 'max-h-0 mt-0'}`}
                   style={{ maxHeight: openFaq === index ? '500px' : '0px' }}
                 >
-                  <p className="text-gray-700">{faq.answer}</p>
+                  <p className="text-gray-700 text-sm">{faq.answer}</p>
                 </div>
               </motion.div>
             ))}
@@ -984,8 +1067,8 @@ export default function Product() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Latest from Our Blog</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">Latest from Our Blog</h2>
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               Stay updated with the latest insights on AI, customer service, and industry trends
             </p>
           </motion.div>
@@ -1083,7 +1166,7 @@ export default function Product() {
           )}
         </div>
         
-        {/* Custom CSS for scrollbar hiding */}
+        {/* Custom CSS for scrollbar hiding and animations */}
         <style jsx>{`
           .scrollbar-hide {
             -ms-overflow-style: none;
@@ -1103,6 +1186,17 @@ export default function Product() {
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
+          }
+          @keyframes scroll-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .animate-scroll-left {
+            animation: scroll-left 30s linear infinite;
           }
         `}</style>
       </section>
