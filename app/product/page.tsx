@@ -754,7 +754,7 @@ export default function Product() {
       {/* Testimonials Section */}
       <section className="py-20 bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+                      <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -770,7 +770,7 @@ export default function Product() {
               Trusted by leading enterprises across industries
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-8"></div>
-          </motion.div>
+                      </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -856,13 +856,13 @@ export default function Product() {
             <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-8"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
             {/* Left Column - Security Image */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative lg:pt-8"
             >
               <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
                 <div className="relative">
@@ -882,21 +882,26 @@ export default function Product() {
                 </div>
               </div>
               
-              {/* Floating Security Badges */}
+              {/* Security Statistics Cards - 2x2 Grid */}
               <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="grid grid-cols-2 gap-4 mt-8"
               >
-                ✓ SOC 2 Type II
+                {[
+                  { number: "256-bit", label: "AES Encryption" },
+                  { number: "99.99%", label: "Uptime SLA" },
+                  { number: "24/7", label: "Security Monitoring" },
+                  { number: "100%", label: "GDPR Compliant" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300">
+                    <div className="text-lg font-bold text-gray-900 mb-1">{stat.number}</div>
+                    <div className="text-xs text-gray-600">{stat.label}</div>
+                  </div>
+                ))}
               </motion.div>
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
-              >
-                ✓ GDPR Compliant
-              </motion.div>
+
             </motion.div>
 
             {/* Right Column - Security Features */}
@@ -964,25 +969,7 @@ export default function Product() {
             </motion.div>
           </div>
 
-          {/* Bottom Security Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16"
-          >
-            {[
-              { number: "256-bit", label: "AES Encryption" },
-              { number: "99.99%", label: "Uptime SLA" },
-              { number: "24/7", label: "Security Monitoring" },
-              { number: "100%", label: "GDPR Compliant" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center bg-white rounded-xl p-6 shadow-md border border-gray-100">
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
+
         </div>
       </section>
 
@@ -1203,7 +1190,6 @@ export default function Product() {
 
       {/* CTA Section */}
       <EnterpriseCTA />
-
       <Footer />
     </main>
   );
