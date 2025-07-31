@@ -508,17 +508,25 @@ export default function Product() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-5"
             >
-              <p className="text-base text-gray-700 leading-relaxed">
-                Caller Digital delivers intelligent voice automation that empowers businesses to scale support, reduce operational costs, and enhance customer engagement — without increasing headcount.
-              </p>
-              <p className="text-base text-gray-700 leading-relaxed">
-                Built to handle over <strong>200K+ minutes/month</strong>, the platform combines powerful voice AI, real-time analytics, and multi-language support.
-              </p>
-              <p className="text-base text-gray-700 leading-relaxed">
-                Whether for lead qualification, customer surveys, or support tickets — every voice interaction is fast, smart, and measurable.
-              </p>
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">
+                <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                  Caller Digital delivers intelligent voice automation that empowers businesses to scale support, reduce operational costs, and enhance customer engagement — without increasing headcount.
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl p-6 border border-teal-100">
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Built to handle over <span className="font-bold text-blue-600">200K+ minutes/month</span>, the platform combines powerful voice AI, real-time analytics, and multi-language support.
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-100">
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Whether for lead qualification, customer surveys, or support tickets — every voice interaction is fast, smart, and measurable.
+                </p>
+              </div>
             </motion.div>
 
             {/* Right Column - Highlight Tiles */}
@@ -895,9 +903,9 @@ export default function Product() {
                   { number: "24/7", label: "Security Monitoring" },
                   { number: "100%", label: "GDPR Compliant" }
                 ].map((stat, index) => (
-                  <div key={index} className="text-center bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300">
-                    <div className="text-lg font-bold text-gray-900 mb-1">{stat.number}</div>
-                    <div className="text-xs text-gray-600">{stat.label}</div>
+                  <div key={index} className="text-center bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-xl hover:scale-105 hover:border-purple-300 hover:bg-gradient-to-br hover:from-white hover:to-purple-50 transition-all duration-300 group cursor-pointer">
+                    <div className="text-lg font-bold text-gray-900 mb-1 group-hover:text-purple-700 transition-colors duration-300">{stat.number}</div>
+                    <div className="text-xs text-gray-600 group-hover:text-purple-600 transition-colors duration-300">{stat.label}</div>
                   </div>
                 ))}
               </motion.div>
