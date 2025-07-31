@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Footer from '@/app/components/Footer';
 import EnterpriseCTA from '@/app/components/EnterpriseCTA';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -42,6 +43,118 @@ export default function RealEstatePage() {
         <meta name="description" content="Transform real estate with AI voice bots and automation. Improve property management, customer service, and operations with Caller.Digital." />
       </Head>
       <main className="min-h-screen bg-gradient-to-br from-teal-100 via-blue-100 to-purple-100">
+      <section className="relative py-16 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/ezgif.com-gif-maker-3-2-768x352.jpg" 
+            alt="AI Voice Technology Digital Illustration" 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[480px]">
+            <div className="lg:col-span-1">
+            {/* Left Section - Text Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+            >
+                             <motion.div
+                 initial={{ scale: 0.95 }}
+                 animate={{ scale: 1 }}
+                 transition={{ duration: 0.5 }}
+               >
+                 {/* Breadcrumb */}
+               <motion.div 
+                 className="text-xs text-gray-300 mb-6"
+                 initial={{ opacity: 0, y: 10 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.5, duration: 0.5 }}
+               >
+                 <Link href="/" className="hover:text-purple-400 transition-colors duration-200">
+                   Home
+                 </Link>
+                 {' > '} 
+                 <Link href="/" className="hover:text-purple-400 transition-colors duration-200">
+                   Industries
+                 </Link>
+                 {' > '} Real Estate
+               </motion.div>
+                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-white leading-tight">
+                    Transform Real Estate Engagement with
+                   <motion.span 
+                     className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent inline-block"
+                     initial={{ opacity: 0 }}
+                     animate={{ opacity: 1 }}
+                     transition={{ delay: 0.3, duration: 0.5 }}
+                   >
+                     AI Voice Automation
+                   </motion.span>
+                 </h1>
+               </motion.div>
+               <motion.p 
+                 className="text-base md:text-lg text-gray-200 mb-3 leading-relaxed"
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.4, duration: 0.6 }}
+               >
+                 Automate property lead calls, site visit confirmations, and follow-ups with human-like voice bots — available 24/7 in multiple languages.
+               </motion.p>
+               
+              
+               
+               {/* Call to Action Buttons */}
+               <motion.div 
+                 className="flex flex-col sm:flex-row gap-3"
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.6, duration: 0.6 }}
+               >
+                 <motion.button 
+                   className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl text-base font-semibold shadow-lg transition-all duration-300 hover:from-purple-500 hover:to-teal-400 hover:shadow-xl hover:scale-105"
+                   whileHover={{ scale: 1.05 }}
+                   whileTap={{ scale: 0.95 }}
+                   onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
+                 >
+                   Book a Demo
+                 </motion.button>
+                 <motion.button 
+                   className="border-2 border-white text-white px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:border-purple-400 hover:text-purple-400 hover:scale-105"
+                   whileHover={{ scale: 1.05 }}
+                   whileTap={{ scale: 0.95 }}
+                   onClick={() => {
+                     // Add modal or video functionality here
+                     console.log('Talk to Experts clicked');
+                   }}
+                 >
+                   Talk to Experts
+                 </motion.button>
+               </motion.div>
+            </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* Subtle background elements */}
+        <motion.div 
+          className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.05 }}
+          transition={{ duration: 1 }}
+        >
+          <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-xl" />
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full blur-xl" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-teal-400 to-purple-400 rounded-full blur-2xl" />
+        </motion.div>
+        
+            
+      </section>
         {/* Hero Section */}
         <section className="relative py-10 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
