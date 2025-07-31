@@ -868,6 +868,427 @@ export default function RealEstatePage() {
           </div>
         </section>
 
+        {/* Analytics Snapshot Section */}
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-3xl"></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-500/10 to-blue-500/10 rounded-full border border-teal-200/50 mb-6">
+                <div className="w-2 h-2 bg-teal-500 rounded-full mr-2 animate-pulse"></div>
+                <span className="text-sm font-medium text-teal-700">Live Analytics</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Analytics{' '}
+                <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                  Snapshot
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Real-time insights from our AI voice automation platform in the real estate industry
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Left Column - Modern Analytics Cards */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-8"
+              >
+                {/* Calls Made Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-blue-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-105">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="relative">
+                          <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                          </div>
+                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                            <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900">Calls Made</h3>
+                          <p className="text-xs text-gray-600">Total automated calls</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-end justify-between">
+                      <div className="text-3xl font-bold text-teal-600">15,847</div>
+                      <div className="flex items-center space-x-2">
+                        <svg className="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L12 10.586 14.586 8H12z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-xs font-semibold text-green-600">+12%</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Hot Leads Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-pink-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-105">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="relative">
+                          <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                          </div>
+                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center animate-pulse">
+                            <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900">Hot Leads</h3>
+                          <p className="text-xs text-gray-600">High-intent prospects</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-end justify-between">
+                      <div className="text-3xl font-bold text-red-600">2,341</div>
+                      <div className="flex items-center space-x-2">
+                        <svg className="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L12 10.586 14.586 8H12z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-xs font-semibold text-green-600">+8%</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Languages Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-105">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="relative">
+                          <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                            <span className="text-xs font-bold text-white">12</span>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900">Languages</h3>
+                          <p className="text-xs text-gray-600">Multilingual support</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-end justify-between">
+                      <div className="text-3xl font-bold text-blue-600">12</div>
+                      <div className="text-xs text-blue-600 font-medium">Regional dialects</div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Conversion Rate Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-105">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="relative">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                          </div>
+                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                            <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900">Conversion Rate</h3>
+                          <p className="text-xs text-gray-600">Lead to customer</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-end justify-between">
+                      <div className="text-3xl font-bold text-purple-600">23.4%</div>
+                      <div className="flex items-center space-x-2">
+                        <svg className="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L12 10.586 14.586 8H12z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-xs font-semibold text-green-600">+5%</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Right Column - Modern Chart */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/50 to-white/30 rounded-2xl blur-2xl"></div>
+                <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl min-h-[600px] flex flex-col">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Performance Overview</h3>
+                    <p className="text-sm text-gray-600">Monthly comparison of key metrics</p>
+                  </div>
+                  
+                  {/* Advanced Analytics Charts - Full Height Layout */}
+                  <div className="flex-1 flex flex-col space-y-8">
+                    {/* Bar Chart - Monthly Performance */}
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-semibold text-gray-700">Monthly Performance</span>
+                        <span className="text-xs text-gray-500">Last 6 months</span>
+                      </div>
+                      <div className="relative h-40 flex items-end justify-between space-x-3">
+                        {[
+                          { value: 65, color: "from-teal-400 to-teal-600", label: "Jan" },
+                          { value: 78, color: "from-teal-400 to-teal-600", label: "Feb" },
+                          { value: 85, color: "from-teal-400 to-teal-600", label: "Mar" },
+                          { value: 92, color: "from-teal-400 to-teal-600", label: "Apr" },
+                          { value: 88, color: "from-teal-400 to-teal-600", label: "May" },
+                          { value: 95, color: "from-teal-400 to-teal-600", label: "Jun" }
+                        ].map((bar, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ height: 0 }}
+                            whileInView={{ height: `${bar.value}%` }}
+                            transition={{ duration: 1, delay: index * 0.1, ease: "easeOut" }}
+                            className={`w-10 bg-gradient-to-t ${bar.color} rounded-t-xl relative group cursor-pointer hover:scale-110 transition-all duration-300 shadow-lg`}
+                          >
+                            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white px-3 py-2 rounded-lg shadow-md">
+                              {bar.value}%
+                            </div>
+                            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm text-gray-500 font-medium">
+                              {bar.label}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Line Chart - Lead Quality Trend with Axes */}
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-semibold text-gray-700">Lead Quality Trend</span>
+                        <span className="text-xs text-gray-500">Conversion rate</span>
+                      </div>
+                      <div className="relative h-36">
+                        <svg className="w-full h-full" viewBox="0 0 300 144">
+                          <defs>
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#10b981" stopOpacity="0.3"/>
+                              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3"/>
+                            </linearGradient>
+                            <linearGradient id="lineGradientMain" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#10b981"/>
+                              <stop offset="100%" stopColor="#3b82f6"/>
+                            </linearGradient>
+                          </defs>
+                          
+                          {/* Y-axis */}
+                          <line x1="25" y1="15" x2="25" y2="129" stroke="#e5e7eb" strokeWidth="1.5"/>
+                          {/* X-axis */}
+                          <line x1="25" y1="129" x2="275" y2="129" stroke="#e5e7eb" strokeWidth="1.5"/>
+                          
+                          {/* Y-axis labels */}
+                          <text x="18" y="20" textAnchor="end" className="text-xs fill-gray-500 font-medium">100%</text>
+                          <text x="18" y="52" textAnchor="end" className="text-xs fill-gray-500 font-medium">75%</text>
+                          <text x="18" y="84" textAnchor="end" className="text-xs fill-gray-500 font-medium">50%</text>
+                          <text x="18" y="116" textAnchor="end" className="text-xs fill-gray-500 font-medium">25%</text>
+                          <text x="18" y="134" textAnchor="end" className="text-xs fill-gray-500 font-medium">0%</text>
+                          
+                          {/* Grid lines */}
+                          <line x1="25" y1="52" x2="275" y2="52" stroke="#f3f4f6" strokeWidth="0.5"/>
+                          <line x1="25" y1="84" x2="275" y2="84" stroke="#f3f4f6" strokeWidth="0.5"/>
+                          <line x1="25" y1="116" x2="275" y2="116" stroke="#f3f4f6" strokeWidth="0.5"/>
+                          
+                          {/* Area fill */}
+                          <motion.path
+                            initial={{ pathLength: 0 }}
+                            whileInView={{ pathLength: 1 }}
+                            transition={{ duration: 2, delay: 0.5 }}
+                            d="M25,129 L65,90 L105,58 L145,45 L185,32 L225,23 L265,15 L275,10 L275,129 Z"
+                            fill="url(#lineGradient)"
+                            stroke="none"
+                          />
+                          
+                          {/* Main line */}
+                          <motion.path
+                            initial={{ pathLength: 0 }}
+                            whileInView={{ pathLength: 1 }}
+                            transition={{ duration: 2, delay: 0.7 }}
+                            d="M25,129 L65,90 L105,58 L145,45 L185,32 L225,23 L265,15 L275,10"
+                            stroke="url(#lineGradientMain)"
+                            strokeWidth="4"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          
+                          {/* Data points */}
+                          {[
+                            { x: 25, y: 129 }, { x: 65, y: 90 }, { x: 105, y: 58 },
+                            { x: 145, y: 45 }, { x: 185, y: 32 }, { x: 225, y: 23 },
+                            { x: 265, y: 15 }, { x: 275, y: 10 }
+                          ].map((point, index) => (
+                            <motion.circle
+                              key={index}
+                              cx={point.x} cy={point.y} r="5"
+                              fill="#10b981"
+                              stroke="#ffffff"
+                              strokeWidth="2"
+                              initial={{ scale: 0 }}
+                              whileInView={{ scale: 1 }}
+                              transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+                            />
+                          ))}
+                        </svg>
+                        <div className="absolute top-3 right-3 text-sm font-semibold text-green-600 bg-green-100 px-4 py-2 rounded-full shadow-md">↑ 23.4%</div>
+                      </div>
+                    </div>
+
+                    {/* Enhanced Donut Chart - Language Distribution */}
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-semibold text-gray-700">Language Distribution</span>
+                        <span className="text-xs text-gray-500">Top 4 languages</span>
+                      </div>
+                      <div className="flex items-center space-x-8">
+                        <div className="relative w-24 h-24">
+                          <svg className="w-full h-full" viewBox="0 0 100 100">
+                            {/* Background circle */}
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#f3f4f6" strokeWidth="8"/>
+                            
+                            {/* Language segments */}
+                            <motion.circle
+                              cx="50" cy="50" r="45" fill="none" stroke="#10b981" strokeWidth="8"
+                              strokeDasharray="283" strokeDashoffset="283"
+                              initial={{ strokeDashoffset: 283 }}
+                              whileInView={{ strokeDashoffset: 155 }}
+                              transition={{ duration: 1.5, delay: 1 }}
+                              strokeLinecap="round"
+                              transform="rotate(-90 50 50)"
+                            />
+                            <motion.circle
+                              cx="50" cy="50" r="45" fill="none" stroke="#3b82f6" strokeWidth="8"
+                              strokeDasharray="283" strokeDashoffset="283"
+                              initial={{ strokeDashoffset: 283 }}
+                              whileInView={{ strokeDashoffset: 198 }}
+                              transition={{ duration: 1.5, delay: 1.2 }}
+                              strokeLinecap="round"
+                              transform="rotate(-90 50 50)"
+                            />
+                            <motion.circle
+                              cx="50" cy="50" r="45" fill="none" stroke="#8b5cf6" strokeWidth="8"
+                              strokeDasharray="283" strokeDashoffset="283"
+                              initial={{ strokeDashoffset: 283 }}
+                              whileInView={{ strokeDashoffset: 240 }}
+                              transition={{ duration: 1.5, delay: 1.4 }}
+                              strokeLinecap="round"
+                              transform="rotate(-90 50 50)"
+                            />
+                            <motion.circle
+                              cx="50" cy="50" r="45" fill="none" stroke="#6b7280" strokeWidth="8"
+                              strokeDasharray="283" strokeDashoffset="283"
+                              initial={{ strokeDashoffset: 283 }}
+                              whileInView={{ strokeDashoffset: 255 }}
+                              transition={{ duration: 1.5, delay: 1.6 }}
+                              strokeLinecap="round"
+                              transform="rotate(-90 50 50)"
+                            />
+                            
+                            {/* Center text */}
+                            <text x="50" y="50" textAnchor="middle" dy="0.3em" className="text-base font-bold fill-gray-700">12</text>
+                            <text x="50" y="62" textAnchor="middle" className="text-xs fill-gray-500">Languages</text>
+                          </svg>
+                        </div>
+                        <div className="flex-1 space-y-3">
+                          <div className="flex items-center justify-between group">
+                            <div className="flex items-center space-x-3">
+                              <div className="w-4 h-4 bg-teal-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                              <span className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300">English</span>
+                            </div>
+                            <span className="text-sm font-semibold text-gray-700">45%</span>
+                          </div>
+                          <div className="flex items-center justify-between group">
+                            <div className="flex items-center space-x-3">
+                              <div className="w-4 h-4 bg-blue-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                              <span className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Hindi</span>
+                            </div>
+                            <span className="text-sm font-semibold text-gray-700">30%</span>
+                          </div>
+                          <div className="flex items-center justify-between group">
+                            <div className="flex items-center space-x-3">
+                              <div className="w-4 h-4 bg-purple-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                              <span className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Spanish</span>
+                            </div>
+                            <span className="text-sm font-semibold text-gray-700">15%</span>
+                          </div>
+                          <div className="flex items-center justify-between group">
+                            <div className="flex items-center space-x-3">
+                              <div className="w-4 h-4 bg-gray-400 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                              <span className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Others</span>
+                            </div>
+                            <span className="text-sm font-semibold text-gray-700">10%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Hero Section */}
         <section className="relative py-10 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
