@@ -541,6 +541,332 @@ export default function RealEstatePage() {
           </div>
         </div>
       </section>
+ 
+       {/* Real-World Use Cases Section */}
+       <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+                Real-World Use Cases {' '}
+                <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent inline-block">
+                  for Real Estate
+                </span>
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-6"></div>
+            </motion.div>
+            
+            <div className="space-y-12">
+              {/* Use Case 1: Inbound Lead Follow-up */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1, duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex flex-col lg:flex-row items-center gap-8">
+                  <div className="lg:w-1/2">
+                    <div className="flex items-center mb-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">Inbound lead follow-up from property portals</h3>
+                        <p className="text-teal-600 font-medium">Instant Response System</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      Automatically engage with potential buyers who inquire through 99acres, MagicBricks, and other property portals with instant responses and qualification.
+                    </p>
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">24/7 Availability</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Multi-language Support</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:w-1/2">
+                    <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8 border-l-4 border-teal-500">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-teal-700">Lead Response Time</span>
+                        <span className="text-2xl font-bold text-teal-600">30s</span>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Qualification Rate</span>
+                          <span className="font-semibold text-gray-900">85%</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Portal Integration</span>
+                          <span className="font-semibold text-gray-900">10+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Use Case 2: Auto-reminders for site visits */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
+                  <div className="lg:w-1/2">
+                    <div className="flex items-center mb-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">Auto-reminders for site visits</h3>
+                        <p className="text-blue-600 font-medium">Smart Scheduling System</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      Send automated reminders and confirmations for property visits, handle rescheduling requests, and ensure optimal coordination between buyers and agents.
+                    </p>
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Smart Notifications</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Reschedule Handling</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:w-1/2">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border-l-4 border-blue-500">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-blue-700">Visit Confirmation Rate</span>
+                        <span className="text-2xl font-bold text-blue-600">92%</span>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">No-show Reduction</span>
+                          <span className="font-semibold text-gray-900">60%</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Agent Time Saved</span>
+                          <span className="font-semibold text-gray-900">4hrs/day</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Use Case 3: Pre-launch campaign calling */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex flex-col lg:flex-row items-center gap-8">
+                  <div className="lg:w-1/2">
+                    <div className="flex items-center mb-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">Pre-launch campaign calling</h3>
+                        <p className="text-purple-600 font-medium">Proactive Lead Generation</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      Generate excitement and pre-qualify leads before property launches by proactively calling potential buyers and collecting their preferences.
+                    </p>
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Early Bird Offers</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Preference Collection</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:w-1/2">
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border-l-4 border-purple-500">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-purple-700">Pre-launch Interest</span>
+                        <span className="text-2xl font-bold text-purple-600">78%</span>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Early Bookings</span>
+                          <span className="font-semibold text-gray-900">45%</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Campaign Reach</span>
+                          <span className="font-semibold text-gray-900">10K+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Use Case 4: Post-visit feedback collection */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="relative"
+              >
+                <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
+                  <div className="lg:w-1/2">
+                    <div className="flex items-center mb-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">Post-visit feedback collection</h3>
+                        <p className="text-green-600 font-medium">Continuous Improvement</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      Automatically collect feedback and satisfaction scores after property visits to improve service quality and identify areas for enhancement.
+                    </p>
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Real-time Analytics</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Quality Insights</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:w-1/2">
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border-l-4 border-green-500">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-green-700">Customer Satisfaction</span>
+                        <span className="text-2xl font-bold text-green-600">4.8/5</span>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Response Rate</span>
+                          <span className="font-semibold text-gray-900">89%</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Improvement Areas</span>
+                          <span className="font-semibold text-gray-900">12</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                What Our{' '}
+                <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                  Clients Say
+                </span>
+              </h2>
+              <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Trusted by leading enterprises across industries
+              </p>
+              <div className="w-32 h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mx-auto rounded-full mt-8"></div>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Michael Lacefield",
+                  role: "Co-founder, XYZ",
+                  avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+                  quote: "Caller.Digital transformed our customer support operations. The AI voice bots are incredibly natural and our customer satisfaction scores have improved dramatically.",
+                  rating: 5
+                },
+                {
+                  name: "Harry Callum",
+                  role: "Manager",
+                  avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+                  quote: "The automation capabilities are game-changing. We've scaled our support without increasing headcount, and the quality has never been better.",
+                  rating: 5
+                },
+                {
+                  name: "Mason Robert",
+                  role: "Co-founder, XYZ",
+                  avatar: "https://randomuser.me/api/portraits/men/65.jpg",
+                  quote: "Implementation was seamless and the results were immediate. Our team loves the new system and our customers appreciate the 24/7 availability.",
+                  rating: 5
+                }
+              ].map((testimonial, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300"
+                >
+                  {/* Star Rating */}
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  
+                  {/* Quote */}
+                  <p className="text-gray-700 text-xs leading-relaxed mb-6">
+                    "{testimonial.quote}"
+                  </p>
+                  
+                  {/* User Profile */}
+                  <div className="flex items-center">
+                    <img 
+                      src={testimonial.avatar} 
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gray-100"
+                    />
+                    <div>
+                      <div className="font-bold text-gray-900 text-sm">{testimonial.name}</div>
+                      <div className="text-gray-600 text-xs">{testimonial.role}</div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Hero Section */}
         <section className="relative py-10 overflow-hidden">
@@ -639,6 +965,8 @@ export default function RealEstatePage() {
             </div>
           </div>
         </section>
+
+       
 
         {/* FAQ Section */}
         <section className="py-16 bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50">
